@@ -4,122 +4,127 @@
 ================================================
 */
 
-const carsData = [
-    {
-        id: 7,
-        images: [
-            'assets/images/estoque/SW4 Diamond/frente.jpeg',
-            'assets/images/estoque/SW4 Diamond/2.jpeg',
-            'assets/images/estoque/SW4 Diamond/3.jpeg',
-            'assets/images/estoque/SW4 Diamond/4.jpeg',
-            'assets/images/estoque/SW4 Diamond/5.jpeg',
-            'assets/images/estoque/SW4 Diamond/6.jpeg',
-            'assets/images/estoque/SW4 Diamond/7.jpeg',
-            'assets/images/estoque/SW4 Diamond/8.jpeg',
-            'assets/images/estoque/SW4 Diamond/9.jpeg',
-            'assets/images/estoque/SW4 Diamond/10.jpeg'
-        ],
-        brand: 'Toyota',
-        model: 'SW4 Diamond',
-        year: '2025',
-        km: '0 km',
-        price: 'Consultar Valor',
-        rawPrice: 0,
-        status: 'Novo',
-        specs: {
-            engine: '2.8 Turbo Diesel',
-            power: '204cv',
-            transmission: 'Automática 6 marchas',
-            fuel: 'Diesel'
-        },
-        features: [
-            'Emplacamento grátis',
-            'Disponível para entrega imediata'
-        ]
-    },
-    {
-        id: 8,
-        images: [
-            'assets/images/estoque/Pajero Sport Legend Black/frente.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/2.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/3.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/4.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/5.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/6.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/7.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/8.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/9.jpeg',
-            'assets/images/estoque/Pajero Sport Legend Black/10.jpeg'
-        ],
-        brand: 'Mitsubishi',
-        model: 'Pajero Sport Legend Black',
-        year: '2025',
-        km: '10.000 km',
-        price: 'Consultar Valor',
-        rawPrice: 0,
-        status: 'Seminovo',
-        specs: {
-            engine: '2.4 Turbo Diesel',
-            power: '190cv',
-            transmission: 'Automática 8 marchas',
-            fuel: 'Diesel'
-        },
-        features: [
-            'Único dono',
-            'Categoria: Veículo utilitário esportivo'
-        ]
-    },
-    {
-        id: 9,
-        images: [
-            'assets/images/estoque/Hilux SRV Diesel/frente.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/2.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/3.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/4.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/5.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/6.jpeg',
-            'assets/images/estoque/Hilux SRV Diesel/7.jpeg'
-        ],
-        brand: 'Toyota',
-        model: 'Hilux SRV Diesel',
-        year: '2025',
-        km: '0 km',
-        price: 'Consultar Valor',
-        rawPrice: 0,
-        status: 'Novo',
-        specs: {
-            engine: '2.8 Turbo Diesel',
-            power: '204cv',
-            transmission: 'Automática 6 marchas',
-            fuel: 'Diesel'
-        },
-        features: [
-            'Emplacamento grátis',
-            'Versão: SRV'
-        ]
+// (MUDANÇA) O array 'carsData' foi REMOVIDO daqui.
+
+// (NOVO) Cria uma variável global para armazenar os dados dos carros
+let allCarsData = [];
+
+// (NOVO) Função para carregar os dados do JSON
+async function loadCarData() {
+    try {
+        // O fetch é relativo ao ARQUIVO HTML (index.html, etc.), não ao script.js
+        const response = await fetch('assets/data/carros.json');
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
+        allCarsData = await response.json(); // Armazena na variável global
+        return allCarsData;
+    } catch (error) {
+        console.error("Não foi possível carregar os dados dos carros:", error);
+        return [];
     }
-];
+}
 
+// (NOVO) Função para popular o <select> de Marcas
+function populateBrandFilter() {
+    const brandFilter = document.getElementById('filterBrand');
+    if (!brandFilter) return; // Só executa se o elemento existir
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Encontra todas as marcas únicas
+    const brands = [...new Set(allCarsData.map(car => car.brand))];
+    brands.sort(); // Ordena alfabeticamente
+
+    // Adiciona cada marca como uma <option>
+    brands.forEach(brand => {
+        const option = document.createElement('option');
+        option.value = brand;
+        option.textContent = brand;
+        brandFilter.appendChild(option);
+    });
+}
+
+// (NOVO) Função para popular o <select> do Test-Drive
+function populateTestDriveDropdown() {
+    const modeloSelect = document.getElementById('modelo');
+    if (!modeloSelect) return; // Só executa se o elemento existir
+
+    // Limpa opções antigas (exceto a primeira "Selecione...")
+    while (modeloSelect.options.length > 1) {
+        modeloSelect.remove(1);
+    }
     
+    // Adiciona cada carro
+    allCarsData.forEach(car => {
+        const option = document.createElement('option');
+        option.value = `${car.brand} ${car.model}`;
+        option.textContent = `${car.brand} ${car.model} (${car.year})`;
+        modeloSelect.appendChild(option);
+    });
+
+    // Adiciona a opção "Outro" no final
+    const optionOutro = document.createElement('option');
+    optionOutro.value = "Outro";
+    optionOutro.textContent = "Outro (especificar)";
+    modeloSelect.appendChild(optionOutro);
+}
+
+
+// (MUDANÇA) O DOMContentLoaded agora é 'async' para poder 'await'
+document.addEventListener('DOMContentLoaded', async function() {
+    
+    // (MUDANÇA) Espera os dados carregarem ANTES de fazer qualquer outra coisa
+    await loadCarData();
+    
+    // Inicia as funções básicas que não dependem dos dados
     initMobileMenu();
     initStickyNav();
     initActiveNavLinks();
     initFaqAccordion();
     initFormHandlers();
     
+    // (MUDANÇA) Se não houver carros (erro ao carregar o JSON), mostra um aviso
+    if (allCarsData.length === 0) {
+        console.log("Nenhum dado de carro carregado. Funções de carro ignoradas.");
+        
+        // Trata a página de estoque
+        const stockCarsContainer = document.getElementById('stockCars');
+        const carCountEl = document.getElementById('carCount');
+        if (stockCarsContainer) {
+            stockCarsContainer.innerHTML = `
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 bg-card rounded-xl border border-border-color">
+                    <i data-lucide="alert-triangle" class="w-16 h-16 text-primary-red mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-bold text-light">Erro ao carregar veículos</h3>
+                    <p class="text-muted mt-2">Não foi possível carregar o estoque. Tente recarregar a página.</p>
+                </div>
+            `;
+            if(carCountEl) carCountEl.textContent = 'Erro ao carregar';
+        }
+        // Trata a home
+        const featuredCarsContainer = document.getElementById('featuredCars');
+        if (featuredCarsContainer) {
+            featuredCarsContainer.innerHTML = '<p class="text-muted col-span-3 text-center">Não foi possível carregar os destaques.</p>';
+        }
+        // Sai da função
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        return;
+    }
+    
+    // (MUDANÇA) Se os carros carregaram, executa o resto
+    
     if (document.getElementById('featuredCars')) {
-        renderFeaturedCars(carsData.slice(0, 3)); 
+        renderFeaturedCars(allCarsData.slice(0, 3)); 
     }
     
     if (document.getElementById('stockCars')) {
-        renderStockCars(carsData);
-        initFilters();
+        renderStockCars(allCarsData);
+        initFilters(); // (MUDANÇA) Não precisa mais passar 'carsData'
+        populateBrandFilter(); // (NOVO) Chama a função
     }
     
     const testDriveForm = document.getElementById('testDriveForm');
     if (testDriveForm) {
+        populateTestDriveDropdown(); // (NOVO) Chama a função
+        
         const dateInput = testDriveForm.querySelector('input[name="data"]');
         if (dateInput) {
             dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
@@ -146,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lucide.createIcons();
     }
 
+    // O resto do seu script.js original (formatadores)
     const cpfInput = document.getElementById('cpf');
     const nascInput = document.getElementById('nascimento');
     const entradaInput = document.getElementById('entrada');
@@ -160,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // --- MÓDULO 1: Navegação ---
-
+// (Sem mudanças)
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn'); 
     const mobileMenu = document.getElementById('mobile-menu'); 
@@ -220,7 +226,7 @@ function initActiveNavLinks() {
 }
 
 // --- MÓDULO 2: Accordion (FAQ) ---
-
+// (Sem mudanças)
 function initFaqAccordion() {
     const faqContainer = document.getElementById('faq-container');
     if (!faqContainer) return;
@@ -250,7 +256,7 @@ function initFaqAccordion() {
 }
 
 // --- MÓDULO 3: Notificações (Toast) ---
-
+// (Sem mudanças)
 function showToast(message, type = 'success') {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -279,7 +285,7 @@ function showToast(message, type = 'success') {
 
 
 // --- MÓDULO 4: Formulários ---
-
+// (Sem mudanças)
 function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
@@ -376,7 +382,7 @@ function initFormHandlers() {
 
 
 // --- MÓDULO 5: Renderização de Carros ---
-
+// (Sem mudanças)
 function renderCarCard(car) {
     const tagClass = car.status === 'Novo' 
         ? 'bg-secondary-yellow text-dark' 
@@ -458,6 +464,7 @@ function renderStockCars(cars) {
 
 // --- MÓDULO 6: Filtros e Busca (Estoque) ---
 
+// (MUDANÇA) As funções não recebem mais 'carsData' como argumento
 function initFilters() {
     document.getElementById('searchBox')?.addEventListener('input', filterCars);
     document.getElementById('filterBrand')?.addEventListener('change', filterCars);
@@ -473,7 +480,8 @@ function filterCars() {
     const brand = brandFilter ? brandFilter.value : 'todos';
     const sort = sortBy ? sortBy.value : 'default';
 
-    let filtered = [...carsData]; 
+    // (MUDANÇA) Usa a variável global 'allCarsData'
+    let filtered = [...allCarsData]; 
 
     if (searchTerm) {
         filtered = filtered.filter(car => 
@@ -508,7 +516,8 @@ function filterCars() {
 // --- MÓDULO 7: Modal (Estoque) ---
 
 function openModal(carId) {
-    const car = carsData.find(c => c.id === carId);
+    // (MUDANÇA) Usa a variável global 'allCarsData'
+    const car = allCarsData.find(c => c.id === carId);
     if (!car) {
         showToast('Erro: Carro não encontrado.', 'error');
         return;
@@ -627,6 +636,7 @@ function openModal(carId) {
     initModalSlider(car.images.length);
 }
 
+// (Sem mudanças)
 function initModalSlider(slideCount) {
     const track = document.getElementById('modal-slider-track');
     const nextBtn = document.getElementById('modal-slider-next');
@@ -668,6 +678,7 @@ function initModalSlider(slideCount) {
     updateSlider();
 }
 
+// (Sem mudanças)
 function closeModal() {
     const modalContainer = document.getElementById('modal-container');
     const modalBackdrop = document.getElementById('modal-backdrop');
@@ -701,7 +712,7 @@ function closeModal() {
 
 
 // --- MÓDULO 9: Utilitários ---
-
+// (Sem mudanças)
 function formatCurrency(value) {
     if (isNaN(value)) {
         return 'R$ -';
@@ -727,7 +738,7 @@ function openWhatsAppForCar(brand, model) {
 }
 
 // --- MÓDULO 10: Formatadores de Input (Máscaras) ---
-        
+// (Sem mudanças)
 function formatCPF(e) {
     let value = e.target.value.replace(/\D/g, ''); 
     value = value.substring(0, 11); 

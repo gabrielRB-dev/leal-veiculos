@@ -1,0 +1,159 @@
+[
+    {
+        "id": 7,
+        "images": [
+            "assets/images/estoque/SW4 Diamond/frente.jpeg",
+            "assets/images/estoque/SW4 Diamond/2.jpeg",
+            "assets/images/estoque/SW4 Diamond/3.jpeg",
+            "assets/images/estoque/SW4 Diamond/4.jpeg",
+            "assets/images/estoque/SW4 Diamond/5.jpeg",
+            "assets/images/estoque/SW4 Diamond/6.jpeg",
+            "assets/images/estoque/SW4 Diamond/7.jpeg",
+            "assets/images/estoque/SW4 Diamond/8.jpeg",
+            "assets/images/estoque/SW4 Diamond/9.jpeg",
+            "assets/images/estoque/SW4 Diamond/10.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "SW4 Diamond",
+        "year": "2025",
+        "km": "0 km",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Novo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Emplacamento grátis",
+            "Disponível para entrega imediata"
+        ]
+    },
+    {
+        "id": 8,
+        "images": [
+            "assets/images/estoque/Pajero Sport Legend Black/frente.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/2.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/3.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/4.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/5.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/6.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/7.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/8.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/9.jpeg",
+            "assets/images/estoque/Pajero Sport Legend Black/10.jpeg"
+        ],
+        "brand": "Mitsubishi",
+        "model": "Pajero Sport Legend Black",
+        "year": "2025",
+        "km": "10.000 km",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.4 Turbo Diesel",
+            "power": "190cv",
+            "transmission": "Automática 8 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Único dono",
+            "Categoria: Veículo utilitário esportivo"
+        ]
+    },
+    {
+        "id": 9,
+        "images": [
+            "assets/images/estoque/Hilux SRV Diesel/frente.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/2.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/3.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/4.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/5.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/6.jpeg",
+            "assets/images/estoque/Hilux SRV Diesel/7.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux SRV Diesel",
+        "year": "2025",
+        "km": "0 km",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Novo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Emplacamento grátis",
+            "Versão: SRV"
+        ]
+    },
+    {
+        "id": 10,
+        "images": [
+            "assets/images/estoque/SW4 SRX 2024/frente.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/1.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/2.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/3.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/4.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/5.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/6.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/7.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/8.jpeg",
+            "assets/images/estoque/SW4 SRX 2024/9.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "SW4 SRX",
+        "year": "2024",
+        "km": "51.000 km",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Categoria: SUV",
+            "Versão: SRX"
+        ]
+    },
+    {
+        "id": 11,
+        "images": [
+            "assets/images/estoque/Toro Freedom 2022/frente.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/1.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/2.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/3.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/4.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/5.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/6.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/7.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/8.jpeg",
+            "assets/images/estoque/Toro Freedom 2022/9.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Toro Freedom 270 Turbo",
+        "year": "2021/2022",
+        "km": "30.000 km",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.3 Turbo Flex",
+            "power": "185 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Categoria: Picape",
+            "Versão: Freedom 270 Turbo"
+        ]
+    }
+]
