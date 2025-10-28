@@ -170,18 +170,23 @@ document.addEventListener('DOMContentLoaded', async function() {
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn'); 
     const mobileMenu = document.getElementById('mobile-menu'); 
-    const menuIcon = document.getElementById('menu-icon'); 
+    const menuIconWrapper = document.getElementById('menu-icon'); // Renomeei para 'menuIconWrapper'
 
-    if (!menuBtn || !mobileMenu || !menuIcon) return;
+    if (!menuBtn || !mobileMenu || !menuIconWrapper) return;
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         
+        // (MUDANÇA) Agora, nós recriamos o ícone dentro do wrapper
         if (mobileMenu.classList.contains('hidden')) {
-            menuIcon.setAttribute('data-lucide', 'menu');
+            // Se o menu fechou, apaga o 'x' e cria o 'menu'
+            menuIconWrapper.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
         } else {
-            menuIcon.setAttribute('data-lucide', 'x');
+            // Se o menu abriu, apaga o 'menu' e cria o 'x'
+            menuIconWrapper.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
         }
+        
+        // Chamamos a função para "desenhar" o novo <i> que acabamos de criar
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
