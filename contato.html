@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contato - Leal Veículos | Picos, PI | Fale Conosco</title>
+    <meta name="description" content="Entre em contato com a Leal Veículos em Picos, PI. Envie sua mensagem, veja nosso endereço, telefone e horário de funcionamento. Estamos prontos para atender você.">
+    <meta name="keywords" content="contato leal veículos, telefone leal veículos, endereço leal veículos picos, fale conosco leal veículos, mensagem leal veículos">
+    
+    <meta property="og:title" content="Contato - Leal Veículos | Picos, PI | Fale Conosco">
+    <meta property="og:description" content="Envie sua mensagem, veja nosso endereço, telefone e horário de funcionamento em Picos, PI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/contato.html">
+    <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="tailwind.config.js"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            body {
+                @apply font-sans bg-dark text-light;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-display tracking-wide;
+            }
+            ::-webkit-scrollbar {
+                @apply w-2;
+            }
+            ::-webkit-scrollbar-track {
+                @apply bg-dark;
+            }
+            ::-webkit-scrollbar-thumb {
+                @apply bg-border-color rounded-lg;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                @apply bg-primary-red;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/95 backdrop-blur-lg border-b border-border-color">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display text-2xl font-bold">
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                </a>
+                
+                <ul class="hidden md:flex items-center space-x-6" id="navLinks">
+                    <li><a href="index.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Home</a></li>
+                    <li><a href="empresa.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                    <li><a href="estoque.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                    <li><a href="financiamento.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                    <li><a href="test-drive.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                    <li><a href="contato.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors active-link">Contato</a></li>
+                </ul>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openWhatsApp()" class="flex items-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="index.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Home</a></li>
+                <li><a href="empresa.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                <li><a href="estoque.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                <li><a href="financiamento.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                <li><a href="test-drive.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                <li><a href="contato.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors active-link">Contato</a></li>
+                <li class="pt-4 w-full px-8">
+                    <button onclick="openWhatsApp()" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="openWhatsApp()" class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" aria-label="Fale conosco no WhatsApp">
+            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        </button>
+    </div>
+    
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"></div>
+    
+    <div id="modal-container" class="hidden"></div>
+
+
+    <main class="pt-20">
+        <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1200" 
+                 alt="Mapa com pin de localização" 
+                 class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-20" 
+                 style="animation-duration: 12s; will-change: transform, opacity;">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/50 z-0"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s;">
+                <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
+                    Entre em <span class="text-primary-red">Contato</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-muted">
+                    Estamos prontos para atender você. Fale conosco!
+                </p>
+            </div>
+        </section>
+
+
+        <section class="py-24 bg-dark">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Principal,+1234+-+Centro,+Teresina+-+PI" target="_blank" rel="noopener noreferrer"
+                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="map-pin" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Endereço</h3>
+                        <p class="text-muted text-sm">Av. Dep. Sá Urtiga, 1300<br>São José, Picos - PI</p>
+                        <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Ver no mapa</span>
+                    </a>
+                    <a href="tel:+55XXXXXXXXXXX" 
+                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="phone" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Telefone</h3>
+                        <p class="text-muted text-lg">(XX) XXXXX-XXXX</p>
+                        <span class="mt-4 inline-block text-xs text-secondary-yellow font-semibold uppercase tracking-wider">Ligar agora</span>
+                    </a>
+                    <a href="mailto:contato@lealveiculos.com.br"
+                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.3s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="mail" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">E-mail</h3>
+                        <p class="text-muted text-sm break-words">contato@lealveiculos.com.br</p> 
+                        <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Enviar e-mail</span>
+                    </a>
+                    <div class="bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="clock" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Horário</h3>
+                        <p class="text-muted text-sm">Seg a Sex: 07h às 17h30<br>Sáb: 07h às 12h30</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-card">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="animate-fade-in" style="animation-delay: 0.1s;">
+                        <h2 class="text-5xl font-bold text-light mb-8">Envie sua <span class="text-primary-red">Mensagem</span></h2>
+                        
+                        <form id="contactForm" class="bg-dark border border-border-color rounded-xl p-8 space-y-6">
+                            <div class="form-group">
+                                <label for="nome" class="text-sm font-semibold text-light mb-2 block">Nome Completo</label>
+                                <div class="relative">
+                                    <i data-lucide="user" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"
+                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-sm font-semibold text-light mb-2 block">E-mail</label>
+                                <div class="relative">
+                                     <i data-lucide="mail" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                    <input type="email" name="email" id="email" required placeholder="seu@email.com"
+                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone" class="text-sm font-semibold text-light mb-2 block">Telefone</label>
+                                <div class="relative">
+                                     <i data-lucide="phone" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                    <input type="tel" name="telefone" id="telefone" required placeholder="(00) 00000-0000"
+                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem" class="text-sm font-semibold text-light mb-2 block">Mensagem</label>
+                                <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem"
+                                          class="w-full px-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red resize-none"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="animate-fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-3xl font-bold text-light mb-6">Nossas Redes Sociais</h3>
+                        <div class="flex items-center space-x-4 mb-12">
+                             <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                               class="p-4 bg-dark rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                             <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                               class="p-4 bg-dark rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </a>
+                            <button onclick="openWhatsApp()" class="p-4 bg-dark rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+
+                        <h3 class="text-3xl font-bold text-light mb-6">Nossa Localização</h3>
+                        <div class="w-full h-96 rounded-xl overflow-hidden border border-border-color"> 
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.42545710184!2d-41.4785028!3d-7.076572399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x79c1055a0aac217%3A0xda8f3235eb7e3fd3!2sLeal%20Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1761507854771!5m2!1spt-BR!2sbr"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Localização da Leal Veículos">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <footer class="bg-card border-t border-border-color">
+        <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
+        <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                    </a>
+                    <p class="text-muted text-sm max-w-xs">
+                        Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="empresa.html" class="text-sm text-muted hover:text-primary-red transition-colors">Sobre Nós</a></li>
+                        <li><a href="estoque.html" class="text-sm text-muted hover:text-primary-red transition-colors">Ver Estoque</a></li>
+                        <li><a href="financiamento.html" class="text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                        <li><a href="test-drive.html" class="text-sm text-muted hover:text-primary-red transition-colors">Agendar Test-Drive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
+                            <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">Seg a Sex: 07h – 17h30 | Sáb: 07h – 12h30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border-color pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-muted mb-4 md:mb-0">© <span id="year"></span> Leal Veículos — Todos os direitos reservados.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                     <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                     <button onclick="openWhatsApp()" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+    
+    <script>
+      lucide.createIcons();
+      if (document.getElementById("year")) {
+          document.getElementById("year").textContent = new Date().getFullYear(); 
+      }
+    </script>
+</body>
+</html>

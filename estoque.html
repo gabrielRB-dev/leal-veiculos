@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Estoque - Leal Veículos | Carros Novos e Seminovos em Picos, PI</title>
+    <meta name="description" content="Veja nosso estoque completo de carros novos e seminovos na Leal Veículos em Picos, PI. Filtre por marca, ano e encontre seu próximo veículo com as melhores condições.">
+    <meta name="keywords" content="estoque leal veículos, carros seminovos picos, carros novos picos, veículos picos, comprar carro picos, loja de carros picos">
+
+    <meta property="og:title" content="Estoque - Leal Veículos | Carros Novos e Seminovos em Picos, PI">
+    <meta property="og:description" content="Explore nossa seleção premium de veículos novos e seminovos em Picos, PI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/estoque.html">
+    <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="tailwind.config.js"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            body {
+                @apply font-sans bg-dark text-light;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-display tracking-wide;
+            }
+            ::-webkit-scrollbar {
+                @apply w-2;
+            }
+            ::-webkit-scrollbar-track {
+                @apply bg-dark;
+            }
+            ::-webkit-scrollbar-thumb {
+                @apply bg-border-color rounded-lg;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                @apply bg-primary-red;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/95 backdrop-blur-lg border-b border-border-color">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display text-2xl font-bold">
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                </a>
+                
+                <ul class="hidden md:flex items-center space-x-6" id="navLinks">
+                    <li><a href="index.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Home</a></li>
+                    <li><a href="empresa.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                    <li><a href="estoque.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors active-link">Estoque</a></li>
+                    <li><a href="financiamento.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                    <li><a href="test-drive.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                    <li><a href="contato.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                </ul>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openWhatsApp()" class="flex items-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="index.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Home</a></li>
+                <li><a href="empresa.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                <li><a href="estoque.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors active-link">Estoque</a></li>
+                <li><a href="financiamento.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                <li><a href="test-drive.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                <li><a href="contato.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                <li class="pt-4 w-full px-8">
+                    <button onclick="openWhatsApp()" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="openWhatsApp()" class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" aria-label="Fale conosco no WhatsApp">
+            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        </button>
+    </div>
+    
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"></div>
+    
+    <div id="modal-container" class="hidden"></div>
+
+
+    <main class="pt-20">
+        <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c388d1?q=80&w=1200" 
+                 alt="Carros no showroom" 
+                 class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-20" 
+                 style="animation-duration: 12s; will-change: transform, opacity;">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/50 z-0"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s;">
+                <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
+                    Nosso <span class="text-primary-red">Estoque</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-muted">
+                    Explore nossa seleção premium de veículos novos e seminovos de alta qualidade.
+                </p>
+            </div>
+        </section>
+
+        <div class="filters sticky top-20 z-30 bg-card/95 backdrop-blur-lg border-b border-border-color py-6 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                    
+                    <div class="relative md:col-span-2">
+                        <label for="searchBox" class="sr-only">Buscar por modelo ou marca</label>
+                        <input type="search" id="searchBox" placeholder="Buscar por modelo ou marca..."
+                               class="w-full pl-12 pr-4 py-3 text-sm bg-dark border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        <div class="absolute left-4 top-1/2 -translate-y-1/2 text-muted">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="filterBrand" class="sr-only">Filtrar por Marca</label>
+                        <select id="filterBrand" class="w-full py-3 px-4 text-sm bg-dark border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                            <option value="todos">Todas as Marcas</option>
+                            <option value="Toyota">Toyota</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="sortBy" class="sr-only">Ordenar por</label>
+                        <select id="sortBy" class="w-full py-3 px-4 text-sm bg-dark border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                            <option value="default">Padrão</option>
+                            <option value="price-desc">Preço (Maior para Menor)</option>
+                            <option value="price-asc">Preço (Menor para Maior)</option>
+                            <option value="year-desc">Ano (Mais Novo)</option>
+                            <option value="year-asc">Ano (Mais Antigo)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="py-24 bg-dark">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div id="carCount" class="mb-6 text-sm text-muted animate-fade-in" style="animation-delay: 0.4s;">
+                    Carregando veículos...
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="stockCars">
+                    
+                    <div class="bg-card border border-border-color rounded-xl h-96 animate-pulse"></div>
+                    <div class="bg-card border border-border-color rounded-xl h-96 animate-pulse hidden md:block"></div>
+
+                </div>
+                
+                </div>
+        </section>
+    </main>
+
+     <footer class="bg-card border-t border-border-color">
+        <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
+        <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                    </a>
+                    <p class="text-muted text-sm max-w-xs">
+                        Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="empresa.html" class="text-sm text-muted hover:text-primary-red transition-colors">Sobre Nós</a></li>
+                        <li><a href="estoque.html" class="text-sm text-muted hover:text-primary-red transition-colors">Ver Estoque</a></li>
+                        <li><a href="financiamento.html" class="text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                        <li><a href="test-drive.html" class="text-sm text-muted hover:text-primary-red transition-colors">Agendar Test-Drive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
+                            <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">Seg a Sex: 07h – 17h30 | Sáb: 07h – 12h30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border-color pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-muted mb-4 md:mb-0">© <span id="year"></span> Leal Veículos — Todos os direitos reservados.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                     <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                     <button onclick="openWhatsApp()" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+    
+    <script>
+      lucide.createIcons();
+      if (document.getElementById("year")) {
+          document.getElementById("year").textContent = new Date().getFullYear(); 
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Leal Veículos - Carros Novos e Seminovos em Picos | Financiamento Facilitado</title>
+    <meta name="description" content="Leal Veículos em Picos, PI oferece carros novos e seminovos de qualidade com financiamento facilitado. Test-drive agendado. Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.">
+    <meta name="keywords" content="carros seminovos picos, carros novos picos, financiamento de veículos picos, test-drive picos, loja de carros picos, veículos usados picos, comprar carro picos, concessionária picos">
+    
+    <meta property="og:title" content="Leal Veículos - Carros Novos e Seminovos em Picos">
+    <meta property="og:description" content="Qualidade, confiança e o melhor financiamento do mercado. Agende seu test-drive.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]">
+    <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="tailwind.config.js"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            body {
+                @apply font-sans bg-dark text-light;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-display tracking-wide;
+            }
+            ::-webkit-scrollbar {
+                @apply w-2;
+            }
+            ::-webkit-scrollbar-track {
+                @apply bg-dark;
+            }
+            ::-webkit-scrollbar-thumb {
+                @apply bg-border-color rounded-lg;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                @apply bg-primary-red;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/95 backdrop-blur-lg border-b border-border-color">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display text-2xl font-bold">
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                </a>
+                
+                <ul class="hidden md:flex items-center space-x-6" id="navLinks">
+                    <li><a href="index.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors active-link">Home</a></li>
+                    <li><a href="empresa.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                    <li><a href="estoque.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                    <li><a href="financiamento.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                    <li><a href="test-drive.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                    <li><a href="contato.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                </ul>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openWhatsApp()" class="flex items-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="index.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors active-link">Home</a></li>
+                <li><a href="empresa.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                <li><a href="estoque.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                <li><a href="financiamento.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                <li><a href="test-drive.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                <li><a href="contato.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                <li class="pt-4 w-full px-8">
+                    <button onclick="openWhatsApp()" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="openWhatsApp()" class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" aria-label="Fale conosco no WhatsApp">
+            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        </button>
+    </div>
+
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4">
+        </div>
+    
+    <div id="modal-container" class="hidden">
+        </div>
+
+
+    <main class="pt-20">
+        <section id="heroSection" class="relative min-h-[80vh] flex items-center overflow-hidden"> 
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/40 z-10"></div>
+                <img src="assets/images/frente1.png" alt="Showroom da Leal Veículos com carros de luxo" 
+                     loading="lazy" class="w-full h-full object-cover animate-hero-image-load"
+                     style="will-change: transform, opacity;">
+            </div>
+            
+            <div class="container max-w-7xl mx-auto px-4 relative z-20">
+                <div class="max-w-2xl py-10 animate-fade-in" style="animation-delay: 0.5s;"> 
+                    <h1 class="text-5xl md:text-7xl font-bold uppercase text-light shadow-black/50" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                        Acelere seus <span class="text-primary-red">sonhos</span> com a 
+                        <span class="text-secondary-yellow">Leal Veículos</span>
+                    </h1>
+                    <p class="mt-6 text-base md:text-lg text-muted max-w-lg" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                        Carros novos e seminovos com qualidade, confiança e o melhor financiamento do mercado.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.8s;">
+                        <a href="estoque.html" class="w-full sm:w-auto flex items-center justify-center gap-2 text-xs font-semibold text-white bg-primary-red hover:bg-red-700 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
+                            <i data-lucide="car" class="w-4 h-4"></i>
+                            Ver Estoque
+                        </a>
+                        <a href="financiamento.html" class="w-full sm:w-auto flex items-center justify-center gap-2 text-xs font-semibold text-dark bg-secondary-yellow hover:bg-yellow-400 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-yellow">
+                            <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+                            Solicitar Financiamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden lg:block absolute bottom-16 right-12 z-20 transform rotate-180" style="writing-mode: vertical-rl;">
+                <span class="text-sm text-muted/60 uppercase tracking-[4px]">Seu próximo carro está aqui</span>
+            </div>
+        </section>
+
+        <section class="py-24 bg-card">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">Veículos em <span class="text-primary-red">Destaque</span></h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Conheça nossa seleção premium de veículos de alta performance e luxo.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="featuredCars">
+                    <div class="bg-dark border border-border-color rounded-xl h-96 animate-pulse"></div>
+                    <div class="bg-dark border border-border-color rounded-xl h-96 animate-pulse hidden md:block"></div>
+                    <div class="bg-dark border border-border-color rounded-xl h-96 animate-pulse hidden lg:block"></div>
+                </div>
+                
+                <div class="text-center mt-16 animate-fade-in">
+                    <a href="estoque.html" class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary-red border-2 border-primary-red hover:bg-primary-red hover:text-white px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105">
+                        Ver Todo o Estoque
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-dark">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">Por que escolher a <span class="text-primary-red">Leal Veículos?</span></h2>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card border border-border-color p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Garantia de Procedência</h3>
+                        <p class="text-muted">Todos os nossos veículos possuem histórico verificado e documentação completa.</p>
+                    </div>
+                    <div class="bg-card border border-border-color p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="trending-up" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Financiamento Facilitado</h3>
+                        <p class="text-muted">As melhores taxas e condições de pagamento do mercado para você.</p>
+                    </div>
+                    <div class="bg-card border border-border-color p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.3s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Atendimento Premium</h3>
+                        <p class="text-muted">Equipe especializada pronta para realizar o seu sonho automotivo.</p>
+                    </div>
+                    <div class="bg-card border border-border-color p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="heart-handshake" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-3">Transparência Total</h3>
+                        <p class="text-muted">Processo claro e honesto em cada etapa da sua compra.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-card">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">O que nossos <span class="text-secondary-yellow">clientes dizem</span></h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-dark border border-border-color p-8 rounded-xl animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://i.pravatar.cc/150?img=12" alt="Avatar de Ricardo Silva">
+                            <div>
+                                <h4 class="text-lg font-bold text-light">Ricardo Silva</h4>
+                                <div class="flex text-secondary-yellow mt-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted italic">"Excelente atendimento! Encontrei o carro dos meus sonhos com um financiamento que cabia no meu bolso. Super recomendo!"</p>
+                    </div>
+                    <div class="bg-dark border border-border-color p-8 rounded-xl animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://i.pravatar.cc/150?img=47" alt="Avatar de Mariana Costa">
+                            <div>
+                                <h4 class="text-lg font-bold text-light">Mariana Costa</h4>
+                                <div class="flex text-secondary-yellow mt-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted italic">"Profissionais atenciosos e transparentes. Comprei meu SUV e estou muito satisfeita com todo o processo."</p>
+                    </div>
+                    <div class="bg-dark border border-border-color p-8 rounded-xl animate-fade-in" style="animation-delay: 0.3s;">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://i.pravatar.cc/150?img=32" alt="Avatar de Carlos Eduardo">
+                            <div>
+                                <h4 class="text-lg font-bold text-light">Carlos Eduardo</h4>
+                                <div class="flex text-secondary-yellow mt-1">
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-secondary-yellow ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted italic">"Melhor experiência de compra que já tive. Veículo impecável e negociação justa. Voltarei com certeza!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-24 bg-dark overflow-hidden relative"> 
+            <div class="container max-w-7xl mx-auto px-4 relative z-20"> 
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">Trabalhamos com as <span class="text-primary-red">Melhores Marcas</span></h2>
+                </div>
+            </div>
+
+            <div class="w-full relative z-0 mb-8"> 
+                <div class="flex w-[200%] animate-scroll-logos"> 
+                    
+                    <div class="flex-1 flex items-center justify-around px-4"> 
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Chevrolet-logo.png" alt="Chevrolet" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Volkswagen_-_Logo.svg/2048px-Volkswagen_-_Logo.svg.png" alt="Volkswagen" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fiat_logo.svg/1024px-Fiat_logo.svg.png" alt="Fiat" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/09/Jeep-Logo.png" alt="Jeep" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://1000logos.net/wp-content/uploads/2018/02/Toyota-logo.png" alt="Toyota" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://logodownload.org/wp-content/uploads/2014/05/hyundai-logo-0.png" alt="Hyundai" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://viacarveiculos.com.br/wp-content/uploads/2021/02/honda-carros-logo-1.png" alt="Honda" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://brandlogos.net/wp-content/uploads/2012/10/renault-auto-vector-logo-400x400.png" alt="Renault" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/nissan-6-logo-png-transparent.png" alt="Nissan" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="w-full relative z-0"> 
+                <div class="flex w-[200%] animate-scroll-logos-reverse"> 
+                    
+                    <div class="flex-1 flex items-center justify-around px-4"> 
+                        <img src="https://purepng.com/public/uploads/large/purepng.com-peugeot-logopeugeotfrench-car-manufacturerpeugeot-automobilespeugeot-logo-1701527529113orwz8.png" alt="Peugeot" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Citroen-logo-2009.png" alt="Citroën" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://assovesc.com.br/wp-content/uploads/2025/06/cherry-logo-2.png" alt="CAOA Chery" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mitsubishi_logo.svg" alt="Mitsubishi" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/2048px-Mercedes-Logo.svg.png" alt="Mercedes-Benz" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://www.pngall.com/wp-content/uploads/13/Audi-Logo-PNG-File.png" alt="Audi" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://images.seeklogo.com/logo-png/15/2/volvo-logo-png_seeklogo-150599.png" alt="Volvo" class="h-8 md:h-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/LandRover.svg/1280px-LandRover.svg.png" alt="Land Rover" class="h-6 md:h-10 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-dark via-dark to-dark/0 pointer-events-none z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-dark via-dark to-dark/0 pointer-events-none z-10"></div>
+        </section>
+
+        <section class="py-24 bg-card">
+            <div class="container max-w-4xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">Dúvidas <span class="text-secondary-yellow">Frequentes</span></h2>
+                </div>
+                
+                <div class="space-y-6" id="faq-container">
+                    <div class="bg-dark border border-border-color rounded-xl overflow-hidden animate-fade-in" style="animation-delay: 0.1s;">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h4 class="text-xl font-bold text-light">Quais são as opções de financiamento?</h4>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-primary-red transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-muted">Oferecemos diversas opções de financiamento em parceria com os principais bancos. Trabalhamos com planos de até 60 meses, com ou sem entrada, e taxas competitivas. Visite nossa página de <a href="financiamento.html" class="text-primary-red hover:underline">Financiamento</a> para simular.</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark border border-border-color rounded-xl overflow-hidden animate-fade-in" style="animation-delay: 0.2s;">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h4 class="text-xl font-bold text-light">Posso agendar um test-drive?</h4>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-primary-red transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-muted">Claro! O test-drive é essencial. Você pode agendar facilmente pela nossa página de <a href="test-drive.html" class="text-primary-red hover:underline">Test-Drive</a>, escolhendo o modelo, data e horário de sua preferência.</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark border border-border-color rounded-xl overflow-hidden animate-fade-in" style="animation-delay: 0.3s;">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+                            <h4 class="text-xl font-bold text-light">Vocês aceitam meu carro usado na troca?</h4>
+                            <i data-lucide="chevron-down" class="w-6 h-6 text-primary-red transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-muted">Sim! Aceitamos seu veículo usado como parte do pagamento. Nossa equipe fará uma avaliação justa e transparente baseada nas condições do carro e no mercado atual. Traga seu veículo para uma avaliação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <footer class="bg-card border-t border-border-color">
+        <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
+        <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                    </a>
+                    <p class="text-muted text-sm max-w-xs">
+                        Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="empresa.html" class="text-sm text-muted hover:text-primary-red transition-colors">Sobre Nós</a></li>
+                        <li><a href="estoque.html" class="text-sm text-muted hover:text-primary-red transition-colors">Ver Estoque</a></li>
+                        <li><a href="financiamento.html" class="text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                        <li><a href="test-drive.html" class="text-sm text-muted hover:text-primary-red transition-colors">Agendar Test-Drive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
+                            <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">Seg a Sex: 07h – 17h30 | Sáb: 07h – 12h30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border-color pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-muted mb-4 md:mb-0">© <span id="year"></span> Leal Veículos — Todos os direitos reservados.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                     <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                     <button onclick="openWhatsApp()" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+    
+    <script>
+      lucide.createIcons();
+      if (document.getElementById("year")) {
+          document.getElementById("year").textContent = new Date().getFullYear(); 
+      }
+    </script>
+</body>
+</html>

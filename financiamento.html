@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Financiamento de Veículos - Leal Veículos | Picos, PI | Solicite sua Análise</title>
+    <meta name="description" content="Solicite sua análise de financiamento de veículo na Leal Veículos em Picos, PI. Oferecemos taxas competitivas, aprovação rápida e as melhores condições da região.">
+    <meta name="keywords" content="financiamento de veículos picos, simular financiamento carro, taxas financiamento veículo, aprovação rápida financiamento, leal veículos financiamento">
+    
+    <meta property="og:title" content="Financiamento de Veículos - Leal Veículos | Picos, PI | Solicite sua Análise">
+    <meta property="og:description" content="Envie seus dados para uma análise de financiamento. Taxas competitivas e aprovação rápida em Picos, PI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/financiamento.html">
+    <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="tailwind.config.js"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            body {
+                @apply font-sans bg-dark text-light;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-display tracking-wide;
+            }
+            ::-webkit-scrollbar {
+                @apply w-2;
+            }
+            ::-webkit-scrollbar-track {
+                @apply bg-dark;
+            }
+            ::-webkit-scrollbar-thumb {
+                @apply bg-border-color rounded-lg;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                @apply bg-primary-red;
+            }
+            input[type="range"] {
+                @apply w-full h-2 bg-border-color rounded-lg appearance-none cursor-pointer;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                @apply w-5 h-5 bg-primary-red rounded-full appearance-none cursor-pointer transition-transform hover:scale-110;
+            }
+            input[type="range"]::-moz-range-thumb {
+                @apply w-5 h-5 bg-primary-red rounded-full border-0 cursor-pointer transition-transform hover:scale-110;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/95 backdrop-blur-lg border-b border-border-color">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display text-2xl font-bold">
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                </a>
+                
+                <ul class="hidden md:flex items-center space-x-6" id="navLinks">
+                    <li><a href="index.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Home</a></li>
+                    <li><a href="empresa.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                    <li><a href="estoque.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                    <li><a href="financiamento.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors active-link">Financiamento</a></li>
+                    <li><a href="test-drive.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                    <li><a href="contato.html" class="font-medium text-sm text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                </ul>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openWhatsApp()" class="flex items-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="index.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Home</a></li>
+                <li><a href="empresa.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Empresa</a></li>
+                <li><a href="estoque.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Estoque</a></li>
+                <li><a href="financiamento.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors active-link">Financiamento</a></li>
+                <li><a href="test-drive.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Test-Drive</a></li>
+                <li><a href="contato.html" class="block font-medium text-lg text-muted hover:text-primary-red transition-colors">Contato</a></li>
+                <li class="pt-4 w-full px-8">
+                    <button onclick="openWhatsApp()" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-5 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Fale Conosco
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="fixed bottom-6 right-6 z-40">
+        <button onclick="openWhatsApp()" class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" aria-label="Fale conosco no WhatsApp">
+            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        </button>
+    </div>
+    
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"></div>
+    
+    <div id="modal-container" class="hidden"></div>
+
+
+    <main class="pt-20">
+        <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200" 
+                 alt="Pessoa assinando contrato de financiamento" 
+                 class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-20" 
+                 style="animation-duration: 12s; will-change: transform, opacity;">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/50 z-0"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s;">
+                <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
+                    Financiamento <span class="text-primary-red">Facilitado</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-muted">
+                    Facilitamos o caminho até o seu novo carro com as melhores condições do mercado.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-dark py-16 border-y border-border-color">
+            <div class="container max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    
+                    <div class="flex flex-col items-center animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="file-text" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-2">1. Preencha os Dados</h3>
+                        <p class="text-muted text-sm max-w-xs">Envie suas informações através do formulário seguro.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="send" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-2">2. Envie via WhatsApp</h3>
+                        <p class="text-muted text-sm max-w-xs">Você será redirecionado para enviar os dados com segurança.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center animate-fade-in" style="animation-delay: 0.3s;">
+                        <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="check-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-light mb-2">3. Análise Rápida</h3>
+                        <p class="text-muted text-sm max-w-xs">Nossa equipe retorna o contato com a aprovação em até 24h.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-card">
+            <div class="container max-w-3xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-light">Solicite sua <span class="text-primary-red">Análise</span></h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Preencha o formulário abaixo para iniciar sua análise de crédito. Nossa equipe entrará em contato via WhatsApp.
+                    </p>
+                </div>
+
+                <form id="simulacaoForm" class="bg-dark border border-border-color rounded-xl p-8 space-y-6 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="form-group">
+                        <label for="nome" class="text-sm font-semibold text-light mb-2 block">Nome Completo</label>
+                        <div class="relative">
+                            <i data-lucide="user" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome completo"
+                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="cpf" class="text-sm font-semibold text-light mb-2 block">CPF</label>
+                        <div class="relative">
+                            <i data-lucide="scan-line" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" name="cpf" id="cpf" required placeholder="000.000.000-00" maxlength="14"
+                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="nascimento" class="text-sm font-semibold text-light mb-2 block">Data de Nascimento</label>
+                        <div class="relative">
+                            <i data-lucide="calendar" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" name="nascimento" id="nascimento" required placeholder="DD/MM/AAAA" maxlength="10"
+                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="entrada" class="text-sm font-semibold text-light mb-2 block">Valor de Entrada</label>
+                        <div class="relative">
+                            <i data-lucide="dollar-sign" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" name="entrada" id="entrada" required placeholder="R$ 10.000"
+                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="renda" class="text-sm font-semibold text-light mb-2 block">Renda Mensal</label>
+                        <div class="relative">
+                             <i data-lucide="briefcase" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" name="renda" id="renda" required placeholder="R$ 5.000"
+                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Solicitar Análise via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+     <footer class="bg-card border-t border-border-color">
+        <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
+        <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                    </a>
+                    <p class="text-muted text-sm max-w-xs">
+                        Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="empresa.html" class="text-sm text-muted hover:text-primary-red transition-colors">Sobre Nós</a></li>
+                        <li><a href="estoque.html" class="text-sm text-muted hover:text-primary-red transition-colors">Ver Estoque</a></li>
+                        <li><a href="financiamento.html" class="text-sm text-muted hover:text-primary-red transition-colors">Financiamento</a></li>
+                        <li><a href="test-drive.html" class="text-sm text-muted hover:text-primary-red transition-colors">Agendar Test-Drive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-light mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
+                            <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">Seg a Sex: 07h – 17h30 | Sáb: 07h – 12h30</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border-color pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-muted mb-4 md:mb-0">© <span id="year"></span> Leal Veículos — Todos os direitos reservados.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                     <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                     <button onclick="openWhatsApp()" 
+                       class="p-2 bg-dark/50 rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js" defer></script>
+    
+    <script>
+      lucide.createIcons();
+      if (document.getElementById("year")) {
+          document.getElementById("year").textContent = new Date().getFullYear(); 
+      }
+    </script>
+</body>
+</html>
