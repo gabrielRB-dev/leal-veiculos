@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Leal Veículos - Carros Novos e Seminovos em Picos | Financiamento Facilitado</title>
+    <title>Leal Veículos</title>
     <meta name="description" content="Leal Veículos em Picos, PI oferece carros novos e seminovos de qualidade com financiamento facilitado. Test-drive agendado. Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.">
     <meta name="keywords" content="carros seminovos picos, carros novos picos, financiamento de veículos picos, test-drive picos, loja de carros picos, veículos usados picos, comprar carro picos, concessionária picos">
     
@@ -13,7 +13,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]">
     <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +61,7 @@
         <div class="container max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="font-display text-2xl font-bold">
-                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;"> 
                 </a>
                 
                 <ul class="hidden md:flex items-center space-x-6" id="navLinks">
@@ -119,11 +122,18 @@
     <main class="pt-20">
         <section id="heroSection" class="relative min-h-[80vh] flex items-center overflow-hidden"> 
             <div class="absolute inset-0 z-0">
+                <!-- Camada escura por cima do vídeo -->
                 <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/40 z-10"></div>
-                <img src="assets/images/frente1.png" alt="Showroom da Leal Veículos com carros de luxo" 
-                     loading="lazy" class="w-full h-full object-cover animate-hero-image-load"
-                     style="will-change: transform, opacity;">
+
+                <!-- Vídeo de fundo -->
+                <video autoplay muted loop playsinline
+                    class="w-full h-full object-cover animate-hero-image-load"
+                    style="will-change: transform, opacity;">
+                    <source src="assets/images/Vídeo_com_Loop_Perfeito.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeos.
+                </video>
             </div>
+
             
             <div class="container max-w-7xl mx-auto px-4 relative z-20">
                 <div class="max-w-2xl py-10 animate-fade-in" style="animation-delay: 0.5s;"> 
@@ -360,13 +370,13 @@
         </section>
     </main>
 
-     <footer class="bg-card border-t border-border-color">
+    <footer class="bg-card border-t border-border-color">
         <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
         <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
-                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;">
                     </a>
                     <p class="text-muted text-sm max-w-xs">
                         Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
@@ -388,9 +398,13 @@
                             <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
                             <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
-                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                            <span class="text-sm text-muted">(89) 3421-0394 | (89) 3422-8187</span> 
+                        </li>
+                         <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i>
+                            <span class="text-sm text-muted">(89) 99937-4334 (WhatsApp)</span> 
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>

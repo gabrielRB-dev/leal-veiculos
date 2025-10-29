@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Agende seu Test-Drive - Leal Veículos | Picos, PI</title>
+    <title>Test-Drive - Leal Veículos</title>
     <meta name="description" content="Agende seu test-drive na Leal Veículos em Picos, PI. Experimente seu próximo carro com horários flexíveis e sem compromisso. Preencha o formulário online.">
     <meta name="keywords" content="agendar test-drive picos, test drive leal veículos, experimentar carro picos, dirigir carro picos, agendamento online test drive">
     
@@ -13,13 +13,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/test-drive.html">
     <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -61,7 +64,7 @@
         <div class="container max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="font-display text-2xl font-bold">
-                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;"> 
                 </a>
                 
                 <ul class="hidden md:flex items-center space-x-6" id="navLinks">
@@ -119,7 +122,7 @@
 
     <main class="pt-20">
         <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1555529771-83c881c10c14?q=80&w=1200" 
+            <img src="assets/images/test-drive/fundo.jpg" 
                  alt="Mão no volante de um carro esportivo" 
                  class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-25" 
                  style="animation-duration: 12s; will-change: transform, opacity;">
@@ -186,15 +189,7 @@
                                    class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="telefone" class="text-sm font-semibold text-light mb-2 block">Telefone / WhatsApp</label>
-                         <div class="relative">
-                            <i data-lucide="phone" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
-                            <input type="tel" name="telefone" id="telefone" required placeholder="(00) 00000-0000"
-                                   class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
-                        </div>
-                    </div>
-                    
+
                     <div class="form-group">
                         <label for="modelo" class="text-sm font-semibold text-light mb-2 block">Modelo Desejado</label>
                          <div class="relative">
@@ -243,13 +238,13 @@
         </section>
     </main>
 
-     <footer class="bg-card border-t border-border-color">
+    <footer class="bg-card border-t border-border-color">
         <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
         <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
-                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;">
                     </a>
                     <p class="text-muted text-sm max-w-xs">
                         Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
@@ -271,9 +266,13 @@
                             <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
                             <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
-                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                            <span class="text-sm text-muted">(89) 3421-0394 | (89) 3422-8187</span> 
+                        </li>
+                         <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i>
+                            <span class="text-sm text-muted">(89) 99937-4334 (WhatsApp)</span> 
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>

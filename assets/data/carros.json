@@ -1,6 +1,7 @@
 [
     {
         "id": 7,
+        "coverImage": "assets/images/estoque/SW4 Diamond/capa.jpg",
         "images": [
             "assets/images/estoque/SW4 Diamond/frente.jpeg",
             "assets/images/estoque/SW4 Diamond/2.jpeg",
@@ -17,6 +18,8 @@
         "model": "SW4 Diamond",
         "year": "2025",
         "km": "0 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
         "price": "Consultar Valor",
         "rawPrice": 0,
         "status": "Novo",
@@ -33,6 +36,7 @@
     },
     {
         "id": 8,
+        "coverImage": "assets/images/estoque/Pajero Sport Legend Black/capa.jpg",
         "images": [
             "assets/images/estoque/Pajero Sport Legend Black/frente.jpeg",
             "assets/images/estoque/Pajero Sport Legend Black/2.jpeg",
@@ -49,6 +53,8 @@
         "model": "Pajero Sport Legend Black",
         "year": "2025",
         "km": "10.000 km",
+        "colorName": "Preto",
+        "colorHex": "#000000",
         "price": "Consultar Valor",
         "rawPrice": 0,
         "status": "Seminovo",
@@ -65,6 +71,7 @@
     },
     {
         "id": 9,
+        "coverImage": "assets/images/estoque/Hilux SRV Diesel/capa.jpg",
         "images": [
             "assets/images/estoque/Hilux SRV Diesel/frente.jpeg",
             "assets/images/estoque/Hilux SRV Diesel/2.jpeg",
@@ -78,6 +85,8 @@
         "model": "Hilux SRV Diesel",
         "year": "2025",
         "km": "0 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
         "price": "Consultar Valor",
         "rawPrice": 0,
         "status": "Novo",
@@ -94,9 +103,9 @@
     },
     {
         "id": 10,
+        "coverImage": "assets/images/estoque/SW4 SRX 2024/capa.jpg",
         "images": [
             "assets/images/estoque/SW4 SRX 2024/frente.jpeg",
-            "assets/images/estoque/SW4 SRX 2024/1.jpeg",
             "assets/images/estoque/SW4 SRX 2024/2.jpeg",
             "assets/images/estoque/SW4 SRX 2024/3.jpeg",
             "assets/images/estoque/SW4 SRX 2024/4.jpeg",
@@ -110,6 +119,8 @@
         "model": "SW4 SRX",
         "year": "2024",
         "km": "51.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
         "price": "Consultar Valor",
         "rawPrice": 0,
         "status": "Seminovo",
@@ -126,6 +137,7 @@
     },
     {
         "id": 11,
+        "coverImage": "assets/images/estoque/Toro Freedom 2022/capa.jpg",
         "images": [
             "assets/images/estoque/Toro Freedom 2022/frente.jpeg",
             "assets/images/estoque/Toro Freedom 2022/1.jpeg",
@@ -142,6 +154,8 @@
         "model": "Toro Freedom 270 Turbo",
         "year": "2021/2022",
         "km": "30.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
         "price": "Consultar Valor",
         "rawPrice": 0,
         "status": "Seminovo",

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Estoque - Leal Veículos | Carros Novos e Seminovos em Picos, PI</title>
+    <title>Estoque - Leal Veículos</title>
     <meta name="description" content="Veja nosso estoque completo de carros novos e seminovos na Leal Veículos em Picos, PI. Filtre por marca, ano e encontre seu próximo veículo com as melhores condições.">
     <meta name="keywords" content="estoque leal veículos, carros seminovos picos, carros novos picos, veículos picos, comprar carro picos, loja de carros picos">
 
@@ -13,7 +13,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/estoque.html">
     <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +61,7 @@
         <div class="container max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="font-display text-2xl font-bold">
-                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;"> 
                 </a>
                 
                 <ul class="hidden md:flex items-center space-x-6" id="navLinks">
@@ -116,13 +119,15 @@
 
     <main class="pt-20">
         <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c388d1?q=80&w=1200" 
-                 alt="Carros no showroom" 
-                 class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-20" 
-                 style="animation-duration: 12s; will-change: transform, opacity;">
-            
+            <video autoplay muted loop playsinline 
+                class="absolute inset-0 w-full h-full object-cover opacity-20"
+                style="animation: hero-image-load 12s ease-in-out infinite; will-change: transform, opacity;">
+                <source src="assets/images/estoque/assets/capa.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos em HTML5.
+            </video>
+
             <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/50 z-0"></div>
-            
+
             <div class="relative z-10 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s;">
                 <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
                     Nosso <span class="text-primary-red">Estoque</span>
@@ -133,7 +138,7 @@
             </div>
         </section>
 
-        <div class="filters sticky top-20 z-30 bg-card/95 backdrop-blur-lg border-b border-border-color py-6 animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="filters bg-card border-b border-border-color py-6 animate-fade-in" style="animation-delay: 0.2s;">
             <div class="container max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                     
@@ -152,12 +157,13 @@
                             <option value="todos">Todas as Marcas</option>
                             </select>
                     </div>
+                    
                     <div>
                         <label for="sortBy" class="sr-only">Ordenar por</label>
                         <select id="sortBy" class="w-full py-3 px-4 text-sm bg-dark border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
                             <option value="default">Padrão</option>
-                            <option value="price-desc">Preço (Maior para Menor)</option>
-                            <option value="price-asc">Preço (Menor para Maior)</option>
+                            <option value="status-novo">Condição (Novos)</option>
+                            <option value="status-usado">Condição (Seminovos)</option>
                             <option value="year-desc">Ano (Mais Novo)</option>
                             <option value="year-asc">Ano (Mais Antigo)</option>
                         </select>
@@ -189,7 +195,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
-                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;">
                     </a>
                     <p class="text-muted text-sm max-w-xs">
                         Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
@@ -211,9 +217,13 @@
                             <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
                             <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
-                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                            <span class="text-sm text-muted">(89) 3421-0394 | (89) 3422-8187</span> 
+                        </li>
+                         <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i>
+                            <span class="text-sm text-muted">(89) 99937-4334 (WhatsApp)</span> 
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>

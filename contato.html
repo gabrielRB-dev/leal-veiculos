@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Contato - Leal Veículos | Picos, PI | Fale Conosco</title>
+    <title>Contato - Leal Veículos</title>
     <meta name="description" content="Entre em contato com a Leal Veículos em Picos, PI. Envie sua mensagem, veja nosso endereço, telefone e horário de funcionamento. Estamos prontos para atender você.">
     <meta name="keywords" content="contato leal veículos, telefone leal veículos, endereço leal veículos picos, fale conosco leal veículos, mensagem leal veículos">
     
@@ -12,8 +12,11 @@
     <meta property="og:description" content="Envie sua mensagem, veja nosso endereço, telefone e horário de funcionamento em Picos, PI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="[URL_DO_SEU_SITE_AQUI]/contato.html">
-    <meta property="og:image" content="[URL_DO_SEU_SITE_AQUI]/assets/images/frente1.png"> 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>">
+    <meta property="og:image" content="assets/images/logo.png"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +61,7 @@
         <div class="container max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="font-display text-2xl font-bold">
-                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;"> 
+                    <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;"> 
                 </a>
                 
                 <ul class="hidden md:flex items-center space-x-6" id="navLinks">
@@ -116,7 +119,7 @@
 
     <main class="pt-20">
         <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1200" 
+            <img src="assets/images/contato/frente.jpg" 
                  alt="Mapa com pin de localização" 
                  class="absolute inset-0 w-full h-full object-cover animate-hero-image-load opacity-20" 
                  style="animation-duration: 12s; will-change: transform, opacity;">
@@ -137,7 +140,7 @@
         <section class="py-24 bg-dark">
             <div class="container max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Principal,+1234+-+Centro,+Teresina+-+PI" target="_blank" rel="noopener noreferrer"
+                    <a href="https://maps.app.goo.gl/FrZnvBkQcUSGKvC49" target="_blank" rel="noopener noreferrer"
                        class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.1s;">
                         <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
                             <i data-lucide="map-pin" class="w-8 h-8"></i>
@@ -146,22 +149,25 @@
                         <p class="text-muted text-sm">Av. Dep. Sá Urtiga, 1300<br>São José, Picos - PI</p>
                         <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Ver no mapa</span>
                     </a>
-                    <a href="tel:+55XXXXXXXXXXX" 
-                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.2s;">
                         <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-6 mx-auto">
                             <i data-lucide="phone" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-light mb-3">Telefone</h3>
-                        <p class="text-muted text-lg">(XX) XXXXX-XXXX</p>
-                        <span class="mt-4 inline-block text-xs text-secondary-yellow font-semibold uppercase tracking-wider">Ligar agora</span>
-                    </a>
-                    <a href="mailto:contato@lealveiculos.com.br"
+                        <h3 class="text-2xl font-bold text-light mb-3">Telefones</h3>
+                        <p class="text-muted text-sm leading-relaxed">
+                           <a href="tel:+558934210394" class="hover:text-secondary-yellow">(89) 3421-0394</a><br>
+                           <a href="tel:+558934228187" class="hover:text-secondary-yellow">(89) 3422-8187</a><br>
+                           <a href="https://wa.me/5589999374334" target="_blank" rel="noopener noreferrer" class="hover:text-secondary-yellow">(89) 99937-4334 (WhatsApp)</a>
+                        </p>
+                        <span class="mt-4 inline-block text-xs text-secondary-yellow font-semibold uppercase tracking-wider">Ligar ou chamar</span>
+                    </div>
+                    <a href="mailto:lealveiculos@gmail.com"
                        class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.3s;">
                         <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
                             <i data-lucide="mail" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-light mb-3">E-mail</h3>
-                        <p class="text-muted text-sm break-words">contato@lealveiculos.com.br</p> 
+                        <p class="text-muted text-sm break-words">lealveiculos@gmail.com</p> 
                         <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Enviar e-mail</span>
                     </a>
                     <div class="bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.4s;">
@@ -191,29 +197,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="text-sm font-semibold text-light mb-2 block">E-mail</label>
-                                <div class="relative">
-                                     <i data-lucide="mail" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
-                                    <input type="email" name="email" id="email" required placeholder="seu@email.com"
-                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefone" class="text-sm font-semibold text-light mb-2 block">Telefone</label>
-                                <div class="relative">
-                                     <i data-lucide="phone" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
-                                    <input type="tel" name="telefone" id="telefone" required placeholder="(00) 00000-0000"
-                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="mensagem" class="text-sm font-semibold text-light mb-2 block">Mensagem</label>
                                 <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem"
                                           class="w-full px-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red resize-none"></textarea>
                             </div>
                             
                             <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
-                                Enviar Mensagem
+                                Enviar Mensagem via WhatsApp
                             </button>
                         </form>
                     </div>
@@ -259,7 +249,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="font-display text-2xl font-bold mb-4 inline-block">
-                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 56px;">
+                         <img src="assets/images/logo.png" alt="Leal Veículos Logo" class="w-auto" style="height: 95px;">
                     </a>
                     <p class="text-muted text-sm max-w-xs">
                         Há 24 anos realizando sonhos automotivos com respeito, seriedade e profissionalismo.
@@ -281,9 +271,13 @@
                             <i data-lucide="map-pin" class="w-4 h-4 text-primary-red mt-1 flex-shrink-0"></i>
                             <span class="text-sm text-muted">Av. Dep. Sá Urtiga, 1300 – São José, Picos – PI</span>
                         </li>
-                        <li class="flex items-center gap-3">
+                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-4 h-4 text-primary-red"></i>
-                            <span class="text-sm text-muted">(XX) XXXXX-XXXX</span> 
+                            <span class="text-sm text-muted">(89) 3421-0394 | (89) 3422-8187</span> 
+                        </li>
+                         <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-green-500"></i>
+                            <span class="text-sm text-muted">(89) 99937-4334 (WhatsApp)</span> 
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>

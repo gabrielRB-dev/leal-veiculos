@@ -290,7 +290,7 @@ function showToast(message, type = 'success') {
 
 
 // --- MÓDULO 4: Formulários ---
-// (Sem mudanças)
+
 function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
@@ -336,12 +336,11 @@ function initFormHandlers() {
             
             const formData = new FormData(e.target);
             const nome = formData.get('nome')?.trim();
-            const telefone = formData.get('telefone')?.trim();
             const modelo = formData.get('modelo')?.trim();
             const data = formData.get('data')?.trim();
             const horario = formData.get('horario')?.trim();
 
-            if (!nome || !telefone || !modelo || !data || !horario) {
+            if (!nome || !modelo || !data || !horario) { 
                 showToast('Por favor, preencha todos os campos.', 'error');
                 return;
             }
@@ -356,7 +355,6 @@ function initFormHandlers() {
 `Olá, Leal Veículos!%0A` +
 `Gostaria de agendar um Test-Drive:%0A%0A` +
 `*Nome:* ${nome}%0A` +
-`*Telefone:* ${telefone}%0A` +
 `*Veículo de Interesse:* ${modelo}%0A` +
 `*Data:* ${dataFormatada}%0A` +
 `*Horário:* ${horario}`;
@@ -375,11 +373,28 @@ function initFormHandlers() {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
-            if (!formData.get('nome') || !formData.get('email') || !formData.get('telefone') || !formData.get('mensagem')) {
-                showToast('Por favor, preencha todos os campos.', 'error');
+            const nome = formData.get('nome')?.trim();
+            const mensagemInput = formData.get('mensagem')?.trim();
+
+            // --- 
+            // MODIFICAÇÃO AQUI: Validação e envio via WhatsApp
+            // ---
+            if (!nome || !mensagemInput) {
+                showToast('Por favor, preencha nome e mensagem.', 'error');
                 return;
             }
-            showToast('Mensagem enviada com sucesso! Responderemos em breve.');
+
+            const mensagem = 
+`Olá, Leal Veículos!%0A` +
+`Mensagem do site (Fale Conosco):%0A%0A` +
+`*Nome:* ${nome}%0A%0A` +
+`*Mensagem:*%0A${mensagemInput}`;
+
+            const url = `https://api.whatsapp.com/send?phone=${NOME_LOJA_NUMERO}&text=${mensagem}`;
+            
+            window.open(url, '_blank');
+
+            showToast('Abrindo WhatsApp para enviar sua mensagem...', 'success');
             e.target.reset();
         });
     }
@@ -406,15 +421,15 @@ function renderCarCard(car) {
                     ${car.status}
                 </div>
                 
-                <img src="${car.images[0]}" alt="${car.brand} ${car.model}" 
-                     loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                <img src="${car.coverImage}" alt="${car.brand} ${car.model}" 
+                     loading="lazy" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
             </div>
             
             <div class="p-6">
                 <p class="text-xs font-semibold text-muted uppercase tracking-wider">${car.brand}</p>
                 <h3 class="text-2xl font-bold text-light mt-1 mb-4 truncate">${car.model}</h3>
                 
-                <div class="flex items-center justify-between text-muted text-sm border-t border-border-color pt-4 mb-4">
+                <div class="grid grid-cols-3 gap-2 text-muted text-sm border-t border-border-color pt-4 mb-4">
                     <span class="flex items-center gap-2">
                         <i data-lucide="calendar" class="w-4 h-4 text-secondary-yellow"></i>
                         ${car.year}
@@ -422,6 +437,10 @@ function renderCarCard(car) {
                     <span class="flex items-center gap-2">
                         <i data-lucide="gauge" class="w-4 h-4 text-secondary-yellow"></i>
                         ${car.km}
+                    </span>
+                    <span class="flex items-center gap-2 truncate">
+                        <span class="w-4 h-4 rounded-full border border-border-color/50 flex-shrink-0" style="background-color: ${car.colorHex};"></span>
+                        <span class="truncate">${car.colorName}</span>
                     </span>
                 </div>
                 
@@ -469,7 +488,7 @@ function renderStockCars(cars) {
 
 // --- MÓDULO 6: Filtros e Busca (Estoque) ---
 
-// (MUDANÇA) As funções não recebem mais 'carsData' como argumento
+// (Sem mudanças)
 function initFilters() {
     document.getElementById('searchBox')?.addEventListener('input', filterCars);
     document.getElementById('filterBrand')?.addEventListener('change', filterCars);
@@ -488,6 +507,7 @@ function filterCars() {
     // (MUDANÇA) Usa a variável global 'allCarsData'
     let filtered = [...allCarsData]; 
 
+    // Filtra por texto (se houver)
     if (searchTerm) {
         filtered = filtered.filter(car => 
             car.model.toLowerCase().includes(searchTerm) ||
@@ -495,23 +515,28 @@ function filterCars() {
         );
     }
 
+    // Filtra por marca (se não for "todos")
     if (brand !== 'todos') {
         filtered = filtered.filter(car => car.brand === brand);
     }
     
+    // Filtra por status (se selecionado)
+    if (sort === 'status-novo') {
+        filtered = filtered.filter(car => car.status === 'Novo');
+    } else if (sort === 'status-usado') {
+        filtered = filtered.filter(car => car.status === 'Seminovo');
+    }
+    
+    // Aplica a ORDENAÇÃO (que agora só afeta ano ou o padrão)
     switch (sort) {
-        case 'price-desc':
-            filtered.sort((a, b) => b.rawPrice - a.rawPrice);
-            break;
-        case 'price-asc':
-            filtered.sort((a, b) => a.rawPrice - b.rawPrice);
-            break;
+        // As opções 'status-novo' e 'status-usado' não precisam mais ordenar aqui
         case 'year-desc':
             filtered.sort((a, b) => parseInt(b.year) - parseInt(a.year));
             break;
         case 'year-asc':
             filtered.sort((a, b) => parseInt(a.year) - parseInt(b.year));
             break;
+        // Se for 'default' ou 'status-*', não faz nada extra (já foi filtrado se necessário)
     }
 
     renderStockCars(filtered);
@@ -557,19 +582,18 @@ function openModal(carId) {
     const priceHtml = car.price === 'Consultar Valor' 
         ? '<p class="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary-yellow mb-6">Consultar Valor</p>'
         : `<p class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-red mb-6">${car.price}</p>`;
-
+        
     modalContainer.innerHTML = `
         <div id="modal-backdrop" onclick="closeModal()"
              class="fixed inset-0 z-40 bg-dark/80 backdrop-blur-sm animate-fade-in"
              style="animation-duration: 0.3s;"></div>
 
         <div id="modal-content-wrapper"
-             class="fixed inset-0 z-50 flex items-start md:items-center justify-center p-4 overflow-y-auto"
+             class="fixed inset-0 z-50 flex items-start md:items-center justify-center md:p-4" 
              onclick="closeModal()">
 
             <div id="modal-content" onclick="event.stopPropagation()"
-                 class="w-full max-w-4xl bg-card rounded-xl shadow-2xl border border-border-color
-                        animate-zoom-in my-8 md:my-auto relative"
+                 class="w-full h-full md:h-auto md:max-w-4xl bg-card md:rounded-xl shadow-2xl md:border border-border-color animate-zoom-in md:my-8 md:my-auto relative overflow-y-auto" 
                  style="animation-duration: 0.3s;">
 
                 <button onclick="closeModal()"
@@ -580,11 +604,11 @@ function openModal(carId) {
 
                 <div class="grid grid-cols-1 md:grid-cols-2">
 
-                    <div class="relative h-64 md:h-auto overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+                    <div class="relative h-90 md:h-auto overflow-hidden md:rounded-l-xl md:rounded-tr-none">
                         <div id="modal-slider-track" class="flex h-full transition-transform duration-300 ease-in-out">
                             ${slidesHtml}
                         </div>
-                        <button id="modal-slider-prev" class="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
+                        <button id="modal-slider-prev" class="absolute top-1/2 left-2 -translatey-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
                             <i data-lucide="chevron-left" class="w-5 h-5"></i>
                         </button>
                         <button id="modal-slider-next" class="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
@@ -607,6 +631,10 @@ function openModal(carId) {
                                 </span>
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="fuel" class="w-4 h-4 text-secondary-yellow"></i> ${car.specs.fuel}
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <span class="w-4 h-4 rounded-full border border-border-color/50" style="background-color: ${car.colorHex};"></span>
+                                    ${car.colorName}
                                 </span>
                             </div>
 
