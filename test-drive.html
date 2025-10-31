@@ -55,6 +55,15 @@
             input[type="date"]::-webkit-calendar-picker-indicator {
                 filter: invert(1);
             }
+            /* --- MUDANÇA AQUI: ADICIONANDO REGRAS DE FOCO --- */
+            input[type="text"]:focus,
+            input[type="search"]:focus,
+            input[type="date"]:focus,
+            select:focus,
+            textarea:focus {
+                @apply outline-none border-primary-red ring-2 ring-primary-red/50;
+            }
+            /* --- FIM DA MUDANÇA --- */
         }
     </style>
 </head>
@@ -83,12 +92,13 @@
                     </button>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                <button id="mobile-menu-btn" class="md:hidden flex items-center gap-2 p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <span id="menu-label" class="text-sm font-medium">Menu</span> 
                     <span id="menu-icon">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </span>
                 </button>
-            </div>
+                </div>
         </div>
         
         <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
@@ -133,7 +143,8 @@
                 <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
                     Agende seu <span class="text-primary-red">Test-Drive</span>
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-muted">
+                
+                <p class="mt-6 text-lg md:text-xl text-light">
                     Sinta a emoção de dirigir o carro ideal. Experimente antes de decidir.
                 </p>
             </div>
@@ -175,7 +186,8 @@
             <div class="container max-w-3xl mx-auto px-4">
                 <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
                     <h2 class="text-5xl md:text-6xl font-bold text-light">Agende <span class="text-secondary-yellow">Agora</span></h2>
-                    <p class="mt-4 text-lg text-muted">
+                    
+                    <p class="mt-4 text-lg text-light">
                         Preencha o formulário abaixo e reserve seu horário.
                     </p>
                 </div>
@@ -230,7 +242,7 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
+                    <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-dark bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
                         Agendar Agora
                     </button>
                 </form>

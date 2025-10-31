@@ -52,6 +52,15 @@
             ::-webkit-scrollbar-thumb:hover {
                 @apply bg-primary-red;
             }
+            /* --- MUDANÇA AQUI: ADICIONANDO REGRAS DE FOCO --- */
+            input[type="text"]:focus,
+            input[type="search"]:focus,
+            input[type="date"]:focus,
+            select:focus,
+            textarea:focus {
+                @apply outline-none border-primary-red ring-2 ring-primary-red/50;
+            }
+            /* --- FIM DA MUDANÇA --- */
         }
     </style>
 </head>
@@ -80,12 +89,13 @@
                     </button>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                <button id="mobile-menu-btn" class="md:hidden flex items-center gap-2 p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <span id="menu-label" class="text-sm font-medium">Menu</span> 
                     <span id="menu-icon">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </span>
                 </button>
-            </div>
+                </div>
         </div>
         
         <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
@@ -120,24 +130,24 @@
     <main class="pt-20">
         <section class="relative min-h-[60vh] h-full flex items-center justify-center text-center overflow-hidden">
             <video autoplay muted loop playsinline 
-                class="absolute inset-0 w-full h-full object-cover opacity-20"
+                class="absolute inset-0 w-full h-full object-cover opacity-30"
                 style="animation: hero-image-load 12s ease-in-out infinite; will-change: transform, opacity;">
                 <source src="assets/images/estoque/assets/capa.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos em HTML5.
             </video>
 
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/50 z-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/30 z-0"></div>
 
             <div class="relative z-10 max-w-3xl mx-auto px-4 animate-fade-in" style="animation-delay: 0.5s;">
                 <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
                     Nosso <span class="text-primary-red">Estoque</span>
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-muted">
+                
+                <p class="mt-6 text-lg md:text-xl text-light">
                     Explore nossa seleção premium de veículos novos e seminovos de alta qualidade.
                 </p>
             </div>
         </section>
-
         <div class="filters bg-card border-b border-border-color py-6 animate-fade-in" style="animation-delay: 0.2s;">
             <div class="container max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">

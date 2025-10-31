@@ -69,6 +69,15 @@
             .timeline-item:last-child::after {
                 @apply hidden;
             }
+            /* --- MUDANÇA AQUI: ADICIONANDO REGRAS DE FOCO --- */
+            input[type="text"]:focus,
+            input[type="search"]:focus,
+            input[type="date"]:focus,
+            select:focus,
+            textarea:focus {
+                @apply outline-none border-primary-red ring-2 ring-primary-red/50;
+            }
+            /* --- FIM DA MUDANÇA --- */
         }
     </style>
 </head>
@@ -97,12 +106,13 @@
                     </button>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                <button id="mobile-menu-btn" class="md:hidden flex items-center gap-2 p-2 rounded-lg text-light transition-all" aria-label="Abrir menu">
+                    <span id="menu-label" class="text-sm font-medium">Menu</span> 
                     <span id="menu-icon">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </span>
                 </button>
-            </div>
+                </div>
         </div>
         
         <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border-color">
@@ -147,7 +157,8 @@
                 <h1 class="text-6xl md:text-8xl font-bold uppercase text-light">
                     Conheça a <span class="text-primary-red">Leal Veículos</span>
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-muted">
+                
+                <p class="mt-6 text-lg md:text-xl text-light">
                     Há 24 anos realizando sonhos automotivos com excelência e confiança.
                 </p>
             </div>
@@ -192,7 +203,8 @@
                         <h2 class="text-5xl md:text-6xl font-bold text-light mb-8">
                             Nossa <span class="text-primary-red">História</span>
                         </h2>
-                        <div class="space-y-6 text-lg text-muted">
+                        
+                        <div class="space-y-6 text-lg text-light">
                             <p>
                                 Loja tradicional do segmento e há 24 anos no mercado.
                             </p>
@@ -200,7 +212,7 @@
                                 Trabalhamos sempre buscando o melhor para nossos clientes, atuando com respeito, seriedade e profissionalismo.
                             </p>
                             <h3 class="text-2xl font-bold text-light pt-4">Nossos Diferenciais:</h3>
-                             <ul class="space-y-2 list-disc list-inside text-muted">
+                             <ul class="space-y-2 list-disc list-inside text-light">
                                 <li>A maior loja multimarcas de veículos novos e seminovos de Picos — a Leal Veículos, muito mais acessível, com espaço amplo e maior variedade.</li>
                                 <li>Buscamos ser uma empresa em constante transformação, adaptando-nos às mudanças do mercado e garantindo qualidade nos produtos e serviços, gerando crescimento, satisfação e confiança de clientes, colaboradores e comunidade.</li>
                              </ul>
@@ -271,9 +283,11 @@
             <div class="container max-w-4xl mx-auto px-4">
                 <div class="bg-card border border-border-color rounded-xl p-8 md:p-12 text-center animate-fade-in">
                     <h2 class="text-4xl md:text-5xl font-bold text-light mb-4">Visite-nos <span class="text-primary-red">Hoje Mesmo</span></h2>
-                    <p class="text-lg text-muted max-w-2xl mx-auto mb-8">
+                    
+                    <p class="text-lg text-light max-w-2xl mx-auto mb-8">
                         Venha tomar um café conosco e conhecer de perto o carro dos seus sonhos. Nossa equipe está pronta para recebê-lo.
                     </p>
+                    
                     <a href="contato.html" class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
                         <i data-lucide="map-pin" class="w-5 h-5"></i>
                         Ver Localização e Contato

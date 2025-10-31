@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     initStickyNav();
     initActiveNavLinks();
     initFaqAccordion();
-    initFormHandlers();
+    initFormHandlers(); // Lógica de WhatsApp
     
     // (MUDANÇA) Se não houver carros (erro ao carregar o JSON), mostra um aviso
     if (allCarsData.length === 0) {
@@ -134,12 +134,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         const modeloFromUrl = urlParams.get('modelo');
         const modeloSelect = testDriveForm.querySelector('select[name="modelo"]');
         
+        // Lógica da ETAPA 3 (pré-preenchimento do formulário) MANTIDA
         if (modeloFromUrl && modeloSelect) {
             const optionExists = Array.from(modeloSelect.options).some(option => option.value === modeloFromUrl);
             if (optionExists) {
                 modeloSelect.value = modeloFromUrl;
             } else {
-                const outroOption = Array.from(modeloSelect.options).find(option => option.value.toLowerCase() === 'outro');
+                // Se o modelo da URL não está na lista (ex. "Outro"), tenta selecionar "Outro"
+                const outroOption = Array.from(modeloSelect.options).find(option => option.value === 'Outro');
                 if (outroOption) {
                     modeloSelect.value = outroOption.value;
                 }
@@ -166,32 +168,41 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
 // --- MÓDULO 1: Navegação ---
-// (Sem mudanças)
+
+// ==================================================================
+// ⬇️ MUDANÇA: Lógica do Menu com Texto ⬇️
+// ==================================================================
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn'); 
     const mobileMenu = document.getElementById('mobile-menu'); 
-    const menuIconWrapper = document.getElementById('menu-icon'); // Renomeei para 'menuIconWrapper'
+    const menuIconWrapper = document.getElementById('menu-icon');
+    const menuLabel = document.getElementById('menu-label'); // 1. Pega o novo span de texto
 
-    if (!menuBtn || !mobileMenu || !menuIconWrapper) return;
+    // 2. Adiciona o menuLabel à verificação
+    if (!menuBtn || !mobileMenu || !menuIconWrapper || !menuLabel) return;
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         
-        // (MUDANÇA) Agora, nós recriamos o ícone dentro do wrapper
         if (mobileMenu.classList.contains('hidden')) {
-            // Se o menu fechou, apaga o 'x' e cria o 'menu'
+            // Menu está fechado
             menuIconWrapper.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            menuLabel.textContent = 'Menu'; // 3. Muda o texto para "Menu"
         } else {
-            // Se o menu abriu, apaga o 'menu' e cria o 'x'
+            // Menu está aberto
             menuIconWrapper.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            menuLabel.textContent = 'Fechar'; // 4. Muda o texto para "Fechar"
         }
         
-        // Chamamos a função para "desenhar" o novo <i> que acabamos de criar
+        // Recria o ícone (menu ou x)
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
     });
 }
+// ==================================================================
+// ⬆️ FIM DA MUDANÇA ⬆️
+// ==================================================================
 
 function initStickyNav() {
     const navbar = document.getElementById('navbar');
@@ -290,7 +301,7 @@ function showToast(message, type = 'success') {
 
 
 // --- MÓDULO 4: Formulários ---
-
+// (Lógica do WhatsApp, conforme solicitado)
 function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
@@ -300,11 +311,12 @@ function initFormHandlers() {
         simulacaoForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const nome = document.getElementById('nome')?.value.trim();
-            const cpf = document.getElementById('cpf')?.value.trim();
-            const nascimento = document.getElementById('nascimento')?.value.trim();
-            const entrada = document.getElementById('entrada')?.value.trim();
-            const renda = document.getElementById('renda')?.value.trim();
+            const formData = new FormData(e.target);
+            const nome = formData.get('nome')?.trim();
+            const cpf = formData.get('cpf')?.trim();
+            const nascimento = formData.get('nascimento')?.trim();
+            const entrada = formData.get('entrada')?.trim();
+            const renda = formData.get('renda')?.trim();
 
             if (!nome || !cpf || !nascimento || !entrada || !renda) {
                 showToast('Por favor, preencha todos os campos.', 'error');
@@ -324,7 +336,7 @@ function initFormHandlers() {
             
             window.open(url, '_blank');
             
-            showToast('Abrindo WhatsApp para enviar sua análise...', 'success');
+            showToast('Tudo pronto! Confirme o envio no WhatsApp.', 'success');
             e.target.reset();
         });
     }
@@ -363,7 +375,7 @@ function initFormHandlers() {
             
             window.open(url, '_blank');
             
-            showToast('Abrindo WhatsApp para agendar seu test-drive...', 'success');
+            showToast('Tudo pronto! Confirme o agendamento no WhatsApp.', 'success');
             e.target.reset();
         });
     }
@@ -376,9 +388,6 @@ function initFormHandlers() {
             const nome = formData.get('nome')?.trim();
             const mensagemInput = formData.get('mensagem')?.trim();
 
-            // --- 
-            // MODIFICAÇÃO AQUI: Validação e envio via WhatsApp
-            // ---
             if (!nome || !mensagemInput) {
                 showToast('Por favor, preencha nome e mensagem.', 'error');
                 return;
@@ -387,14 +396,14 @@ function initFormHandlers() {
             const mensagem = 
 `Olá, Leal Veículos!%0A` +
 `Mensagem do site (Fale Conosco):%0A%0A` +
-`*Nome:* ${nome}%0A%0A` +
+`*Nome:* ${nome}%0A` +
 `*Mensagem:*%0A${mensagemInput}`;
 
             const url = `https://api.whatsapp.com/send?phone=${NOME_LOJA_NUMERO}&text=${mensagem}`;
             
             window.open(url, '_blank');
 
-            showToast('Abrindo WhatsApp para enviar sua mensagem...', 'success');
+            showToast('Tudo pronto! Confirme o envio da mensagem no WhatsApp.', 'success');
             e.target.reset();
         });
     }
@@ -402,20 +411,26 @@ function initFormHandlers() {
 
 
 // --- MÓDULO 5: Renderização de Carros ---
-// (Sem mudanças)
+
 function renderCarCard(car) {
     const tagClass = car.status === 'Novo' 
         ? 'bg-secondary-yellow text-dark' 
         : 'bg-primary-red text-white';
     
     const priceHtml = car.price === 'Consultar Valor' 
-        ? '<p class="text-2xl font-bold text-primary-red mb-5">Consultar Valor</p>'
+        ? `<button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')" 
+                class="w-full text-left text-2xl font-bold text-secondary-yellow mb-5 p-3 -ml-3 rounded-lg hover:bg-border-color/50 transition-colors flex items-center gap-2">
+                <i data-lucide="message-circle" class="w-5 h-5 flex-shrink-0"></i>
+                <span class="truncate">Consultar Valor</span>
+           </button>`
         : `<p class="text-3xl font-bold text-primary-red mb-5">${car.price}</p>`;
         
     return `
         <div class="bg-card border border-border-color rounded-xl overflow-hidden shadow-lg
                     transition-all duration-300 hover:shadow-red hover:border-primary-red/50 hover:-translate-y-1 hover:scale-105
-                    animate-fade-in group">
+                    animate-fade-in group cursor-pointer" 
+             onclick="openModal(${car.id})">
+            
             <div class="relative overflow-hidden">
                 <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-bold ${tagClass}">
                     ${car.status}
@@ -446,7 +461,7 @@ function renderCarCard(car) {
                 
                 ${priceHtml}
                 
-                <button onclick="openModal(${car.id})" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-primary-red border-2 border-primary-red hover:bg-primary-red hover:text-white px-6 py-3 rounded-lg transition-all duration-300">
+                <button onclick="event.stopPropagation(); openModal(${car.id})" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-primary-red border-2 border-primary-red hover:bg-primary-red hover:text-dark px-6 py-3 rounded-lg transition-all duration-300">
                     Ver Detalhes
                 </button>
             </div>
@@ -539,6 +554,26 @@ function filterCars() {
         // Se for 'default' ou 'status-*', não faz nada extra (já foi filtrado se necessário)
     }
 
+    // --- MUDANÇA AQUI: FEEDBACK VISUAL DO FILTRO ---
+    // Adiciona ou remove a borda vermelha do filtro de MARCA
+    if (brandFilter) {
+        if (brand !== 'todos') {
+            brandFilter.classList.add('border-primary-red');
+        } else {
+            brandFilter.classList.remove('border-primary-red');
+        }
+    }
+    
+    // Adiciona ou remove a borda vermelha do filtro de ORDENAÇÃO
+    if (sortBy) {
+        if (sort !== 'default') {
+            sortBy.classList.add('border-primary-red');
+        } else {
+            sortBy.classList.remove('border-primary-red');
+        }
+    }
+    // --- FIM DA MUDANÇA ---
+
     renderStockCars(filtered);
 }
 
@@ -589,11 +624,11 @@ function openModal(carId) {
              style="animation-duration: 0.3s;"></div>
 
         <div id="modal-content-wrapper"
-             class="fixed inset-0 z-50 flex items-start md:items-center justify-center md:p-4" 
+             class="fixed inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" 
              onclick="closeModal()">
 
             <div id="modal-content" onclick="event.stopPropagation()"
-                 class="w-full h-full md:h-auto md:max-w-4xl bg-card md:rounded-xl shadow-2xl md:border border-border-color animate-zoom-in md:my-8 md:my-auto relative overflow-y-auto" 
+                 class="w-full max-h-screen md:h-auto md:max-w-4xl bg-card md:rounded-xl shadow-2xl md:border border-border-color animate-zoom-in md:my-8 relative overflow-y-auto" 
                  style="animation-duration: 0.3s;">
 
                 <button onclick="closeModal()"
@@ -608,7 +643,7 @@ function openModal(carId) {
                         <div id="modal-slider-track" class="flex h-full transition-transform duration-300 ease-in-out">
                             ${slidesHtml}
                         </div>
-                        <button id="modal-slider-prev" class="absolute top-1/2 left-2 -translatey-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
+                        <button id="modal-slider-prev" class="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
                             <i data-lucide="chevron-left" class="w-5 h-5"></i>
                         </button>
                         <button id="modal-slider-next" class="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-dark/50 rounded-full text-light hover:bg-dark z-20">
@@ -649,14 +684,20 @@ function openModal(carId) {
 
                         </div>
 
-                        <div class="mt-auto pt-6 border-t border-border-color">
-                            <button onclick="openWhatsAppForCar('${car.brand}', '${car.model}')"
-                               class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+                        <div class="mt-auto pt-6 border-t border-border-color space-y-3">
+                            <button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')"
+                               class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-dark bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
                                 <i data-lucide="message-circle" class="w-5 h-5"></i>
-                                Entrar em Contato
+                                Tirar Dúvidas (WhatsApp)
                             </button>
+                            <a href="test-drive.html?modelo=${encodeURIComponent(car.brand + ' ' + car.model)}"
+                               onclick="event.stopPropagation();"
+                               class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-muted hover:text-light border border-border-color hover:bg-border-color px-8 py-3 rounded-lg transition-all duration-300">
+                                <i data-lucide="steering-wheel" class="w-5 h-5"></i>
+                                Agendar Test-Drive
+                            </a>
                         </div>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -745,7 +786,7 @@ function closeModal() {
 
 
 // --- MÓDULO 9: Utilitários ---
-// (Sem mudanças)
+// (Sem mudanças - Funções de WhatsApp ainda são usadas nos botões secundários)
 function formatCurrency(value) {
     if (isNaN(value)) {
         return 'R$ -';
