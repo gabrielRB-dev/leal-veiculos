@@ -236,5 +236,118 @@
             "Categoria: SUV",
             "Completo"
         ]
+    },
+    {
+        "id": 14,
+        "coverImage": "assets/images/estoque/rav4-2018/capa.jpg",
+        "images": [
+            "assets/images/estoque/rav4-2018/frente.jpeg",
+            "assets/images/estoque/rav4-2018/1.jpeg",
+            "assets/images/estoque/rav4-2018/2.jpeg",
+            "assets/images/estoque/rav4-2018/3.jpeg",
+            "assets/images/estoque/rav4-2018/4.jpeg",
+            "assets/images/estoque/rav4-2018/5.jpeg",
+            "assets/images/estoque/rav4-2018/6.jpeg",
+            "assets/images/estoque/rav4-2018/7.jpeg",
+            "assets/images/estoque/rav4-2018/8.jpeg",
+            "assets/images/estoque/rav4-2018/9.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "RAV4 2.0 4x2",
+        "year": "2018",
+        "km": "41 km",
+        "colorName": "Marrom",
+        "colorHex": "#8B4513",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.0 16V",
+            "power": "145 cv",
+            "transmission": "Automática CVT",
+            "fuel": "Gasolina"
+        },
+        "features": [
+            "7 Airbags",
+            "Controle de estabilidade",
+            "Bancos em couro",
+            "Teto solar",
+            "Sensores de estacionamento"
+        ]
+    },
+    {
+        "id": 15,
+        "coverImage": "assets/images/estoque/hilux-srx-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/hilux-srx-2021/frente.jpeg",
+            "assets/images/estoque/hilux-srx-2021/1.jpeg",
+            "assets/images/estoque/hilux-srx-2021/2.jpeg",
+            "assets/images/estoque/hilux-srx-2021/3.jpeg",
+            "assets/images/estoque/hilux-srx-2021/4.jpeg",
+            "assets/images/estoque/hilux-srx-2021/5.jpeg",
+            "assets/images/estoque/hilux-srx-2021/6.jpeg",
+            "assets/images/estoque/hilux-srx-2021/7.jpeg",
+            "assets/images/estoque/hilux-srx-2021/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux CD SRX 4x4",
+        "year": "2021",
+        "km": "82 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "7 Airbags",
+            "Toyota Safety Sense",
+            "Apple CarPlay / Android Auto",
+            "Controle adaptativo de cruzeiro",
+            "Bancos em couro"
+        ]
+    },
+    {
+        "id": 16,
+        "coverImage": "assets/images/estoque/strada-volcano-2024/capa.jpg",
+        "images": [
+            "assets/images/estoque/strada-volcano-2024/frente.jpeg",
+            "assets/images/estoque/strada-volcano-2024/1.jpeg",
+            "assets/images/estoque/strada-volcano-2024/2.jpeg",
+            "assets/images/estoque/strada-volcano-2024/3.jpeg",
+            "assets/images/estoque/strada-volcano-2024/4.jpeg",
+            "assets/images/estoque/strada-volcano-2024/5.jpeg",
+            "assets/images/estoque/strada-volcano-2024/6.jpeg",
+            "assets/images/estoque/strada-volcano-2024/7.jpeg",
+            "assets/images/estoque/strada-volcano-2024/8.jpeg",
+            "assets/images/estoque/strada-volcano-2024/9.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Strada Volcano 1.3 AT",
+        "year": "2024",
+        "km": "20 km",
+        "colorName": "Vermelho",
+        "colorHex": "#FF0000",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.3 Firefly Flex",
+            "power": "107 cv (E)",
+            "transmission": "Automática CVT",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Bancos em couro",
+            "Câmera traseira",
+            "Sensores de estacionamento",
+            "Capota marítima",
+            "Rodas de liga leve"
+        ]
     }
 ]
