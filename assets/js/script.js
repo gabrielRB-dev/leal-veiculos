@@ -413,9 +413,7 @@ function initFormHandlers() {
 // --- MÓDULO 5: Renderização de Carros ---
 
 function renderCarCard(car) {
-    const tagClass = car.status === 'Novo' 
-        ? 'bg-secondary-yellow text-dark' 
-        : 'bg-primary-red text-white';
+    // A variável 'tagClass' foi removida, pois não é mais necessária.
     
     const priceHtml = car.price === 'Consultar Valor' 
         ? `<button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')" 
@@ -432,9 +430,6 @@ function renderCarCard(car) {
              onclick="openModal(${car.id})">
             
             <div class="relative overflow-hidden">
-                <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-bold ${tagClass}">
-                    ${car.status}
-                </div>
                 
                 <img src="${car.coverImage}" alt="${car.brand} ${car.model}" 
                      loading="lazy" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
@@ -628,7 +623,7 @@ function openModal(carId) {
              onclick="closeModal()">
 
             <div id="modal-content" onclick="event.stopPropagation()"
-                 class="w-full max-h-screen md:h-auto md:max-w-4xl bg-card md:rounded-xl shadow-2xl md:border border-border-color animate-zoom-in md:my-8 relative overflow-y-auto" 
+                 class="w-full max-h-screen md:h-auto md:max-w-5xl bg-card md:rounded-xl shadow-2xl md:border border-border-color animate-zoom-in md:my-8 relative overflow-y-auto" 
                  style="animation-duration: 0.3s;">
 
                 <button onclick="closeModal()"
@@ -637,9 +632,9 @@ function openModal(carId) {
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
 
-                <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="grid grid-cols-1 md:grid-cols-5">
 
-                    <div class="relative h-90 md:h-auto overflow-hidden md:rounded-l-xl md:rounded-tr-none">
+                    <div class="relative h-90 md:col-span-3 md:h-auto overflow-hidden md:rounded-l-xl md:rounded-tr-none">
                         <div id="modal-slider-track" class="flex h-full transition-transform duration-300 ease-in-out">
                             ${slidesHtml}
                         </div>
@@ -651,7 +646,7 @@ function openModal(carId) {
                         </button>
                     </div>
 
-                    <div class="flex flex-col p-6 md:p-8">
+                    <div class="flex flex-col p-6 md:p-8 md:col-span-2">
                         <div>
                             <p class="text-sm font-semibold text-muted uppercase tracking-wider">${car.brand}</p>
                             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-light mt-1 mb-4">${car.model}</h2>
@@ -802,13 +797,13 @@ function formatCurrency(value) {
 function openWhatsApp() {
     const number = '5589999374334'; 
     const message = encodeURIComponent('Olá! Gostaria de mais informações sobre os veículos.');
-    window.open(`https://wa.me/${number}?text=${message}`, '_blank');
+    window.open(`httpsa://wa.me/${number}?text=${message}`, '_blank');
 }
 
 function openWhatsAppForCar(brand, model) {
     const number = '5589999374334';
     const message = encodeURIComponent(`Olá, Leal Veículos! Tenho interesse no ${brand} ${model} e gostaria de mais informações.`);
-    window.open(`https://wa.me/${number}?text=${message}`, '_blank');
+    window.open(`httpsa://wa.me/${number}?text=${message}`, '_blank');
 }
 
 // --- MÓDULO 10: Formatadores de Input (Máscaras) ---
