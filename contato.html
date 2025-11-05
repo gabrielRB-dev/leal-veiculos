@@ -52,7 +52,6 @@
             ::-webkit-scrollbar-thumb:hover {
                 @apply bg-primary-red;
             }
-            /* --- MUDANÇA AQUI: ADICIONANDO REGRAS DE FOCO --- */
             input[type="text"]:focus,
             input[type="search"]:focus,
             input[type="date"]:focus,
@@ -60,7 +59,6 @@
             textarea:focus {
                 @apply outline-none border-primary-red ring-2 ring-primary-red/50;
             }
-            /* --- FIM DA MUDANÇA --- */
         }
     </style>
 </head>
@@ -123,7 +121,6 @@
     </div>
     
     <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"></div>
-    
     <div id="modal-container" class="hidden"></div>
 
 
@@ -147,114 +144,125 @@
             </div>
         </section>
 
+        
+        <section class="py-24 bg-card">
+            <div class="container max-w-3xl mx-auto px-4">
+                
+                <div class="animate-fade-in" style="animation-delay: 0.1s;">
+                    <h2 class="text-5xl font-bold text-light mb-8 text-center">Envie sua <span class="text-primary-red">Mensagem</span></h2>
+                    
+                    <form id="contactForm" class="bg-dark border border-border-color rounded-xl p-8 space-y-6">
+                        <div class="form-group">
+                            <label for="nome" class="text-sm font-semibold text-light mb-2 block">Nome Completo</label>
+                            <div class="relative">
+                                <i data-lucide="user" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
+                                <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"
+                                       class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem" class="text-sm font-semibold text-light mb-2 block">Mensagem</label>
+                            <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem"
+                                      class="w-full px-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-dark bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
+                            Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <section class="py-24 bg-dark">
             <div class="container max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <a href="https://maps.app.goo.gl/FrZnvBkQcUSGKvC49" target="_blank" rel="noopener noreferrer"
-                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.1s;">
-                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="map-pin" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-light mb-3">Endereço</h3>
-                        <p class="text-muted text-sm">Av. Dep. Sá Urtiga, 1300<br>São José, Picos - PI</p>
-                        <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Ver no mapa</span>
-                    </a>
-                    <div class="bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.2s;">
-                        <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="phone" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-light mb-3">Telefones</h3>
-                        <p class="text-muted text-sm leading-relaxed">
-                           <a href="tel:+558934210394" class="hover:text-secondary-yellow">(89) 3421-0394</a><br>
-                           <a href="tel:+558934228187" class="hover:text-secondary-yellow">(89) 3422-8187</a><br>
-                           <a href="https://wa.me/5589999374334" target="_blank" rel="noopener noreferrer" class="hover:text-secondary-yellow">(89) 99937-4334 (WhatsApp)</a>
-                        </p>
-                        <span class="mt-4 inline-block text-xs text-secondary-yellow font-semibold uppercase tracking-wider">Ligar ou chamar</span>
-                    </div>
-                    <a href="mailto:lealveiculos@gmail.com"
-                       class="block bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-primary-red/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.3s;">
-                        <div class="w-16 h-16 bg-primary-red/10 text-primary-red rounded-lg flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="mail" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-light mb-3">E-mail</h3>
-                        <p class="text-muted text-sm break-words">lealveiculos@gmail.com</p> 
-                        <span class="mt-4 inline-block text-xs text-primary-red font-semibold uppercase tracking-wider">Enviar e-mail</span>
-                    </a>
-                    <div class="bg-card border border-border-color text-center p-8 rounded-xl transition-all duration-300 hover:border-secondary-yellow/50 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style="animation-delay: 0.4s;">
-                        <div class="w-16 h-16 bg-secondary-yellow/10 text-secondary-yellow rounded-lg flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="clock" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-light mb-3">Horário</h3>
-                        <p class="text-muted text-sm">Seg a Sex: 07h às 17h30<br>Sáb: 07h às 12h30</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                
+                <div class="max-w-5xl mx-auto">
 
-        <section class="py-24 bg-card">
-            <div class="container max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div class="animate-fade-in" style="animation-delay: 0.1s;">
-                        <h2 class="text-5xl font-bold text-light mb-8">Envie sua <span class="text-primary-red">Mensagem</span></h2>
+                    <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style="animation-delay: 0.1s;">
+                        <h2 class="text-5xl md:text-6xl font-bold text-light">Nossas <span class="text-secondary-yellow">Informações</span></h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="bg-card border border-border-color rounded-xl p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-lucide="phone" class="w-6 h-6 text-secondary-yellow flex-shrink-0"></i>
+                                <h4 class="text-2xl font-bold text-light">Central</h4>
+                            </div>
+                            <ul class="space-y-3 text-base text-light">
+                                <li>Fixo: <a href="tel:+558934210394" class="font-medium hover:text-secondary-yellow">(89) 3421-0394</a> | <a href="tel:+558934228187" class="font-medium hover:text-secondary-yellow">(89) 3422-8187</a></li>
+                                <li>WhatsApp: <a href="https://wa.me/5589999374334" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-secondary-yellow">(89) 99937-4334</a></li>
+                            </ul>
+                        </div>
+                        <div class="bg-card border border-border-color rounded-xl p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-lucide="users" class="w-6 h-6 text-secondary-yellow flex-shrink-0"></i>
+                                <h4 class="text-2xl font-bold text-light">Equipe de Vendas (WhatsApp)</h4>
+                            </div>
+                            <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-base text-light">
+                                <li><a href="httpsa://wa.me/5589994673393" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-secondary-yellow whitespace-nowrap">(89) 99467-3393</a></li>
+                                <li><a href="httpsa://wa.me/5589994134916" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-secondary-yellow whitespace-nowrap">(89) 99413-4916</a></li>
+                                <li><a href="httpsa://wa.me/5589999387777" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-secondary-yellow whitespace-nowrap">(89) 99938-7777</a></li>
+                                <li><a href="httpsa://wa.me/5589999186535" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-secondary-yellow whitespace-nowrap">(89) 99918-6535</a></li>
+                            </ul>
+                        </div>
+                        <div class="bg-card border border-border-color rounded-xl p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-primary-red"></i>
+                                <h4 class="text-2xl font-bold text-light">Endereço</h4>
+                            </div>
+                            <p class="text-muted text-base mb-4">Av. Dep. Sá Urtiga, 1300<br>São José, Picos - PI</p>
+                            <a href="https://maps.app.goo.gl/FrZnvBkQcUSGKvC49" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-secondary-yellow hover:underline">
+                                Ver no mapa
+                            </a>
+                        </div>
+                        <div class="bg-card border border-border-color rounded-xl p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <i data-lucide="clock" class="w-6 h-6 text-secondary-yellow"></i>
+                                <h4 class="text-2xl font-bold text-light">Horário</h4>
+                            </div>
+                            <p class="text-muted text-base">Seg a Sex: 07h às 17h30<br>Sáb: 07h às 12h30</p>
+                        </div>
+                    </div>
+                    <div class="animate-fade-in" style="animation-delay: 0.6s;">
+                        <div class="mb-16">
+                            <h3 class="text-3xl font-bold text-light mb-6 text-center">Nossa Localização</h3>
+                            <div class="w-full h-96 rounded-xl overflow-hidden border border-border-color"> 
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.42545710184!2d-41.4785028!3d-7.076572399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x79c1055a0aac217%3A0xda8f3235eb7e3fd3!2sLeal%20Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1761507854771!5m2!1spt-BR!2sbr"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Localização da Leal Veículos">
+                                </iframe>
+                            </div>
+                        </div>
                         
-                        <form id="contactForm" class="bg-dark border border-border-color rounded-xl p-8 space-y-6">
-                            <div class="form-group">
-                                <label for="nome" class="text-sm font-semibold text-light mb-2 block">Nome Completo</label>
-                                <div class="relative">
-                                    <i data-lucide="user" class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2"></i>
-                                    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome"
-                                           class="w-full pl-12 pr-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red">
-                                </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-light mb-6 text-center">Nossas Redes</h3>
+                            <div class="flex items-center justify-center space-x-4">
+                                 <a href="httpsa://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                                   class="p-4 bg-card rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
+                                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                                </a>
+                                 <a href="httpsaS://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                                   class="p-4 bg-card rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
+                                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                                </a>
+                                <button onclick="openWhatsApp()" class="p-4 bg-card rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
+                                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <label for="mensagem" class="text-sm font-semibold text-light mb-2 block">Mensagem</label>
-                                <textarea name="mensagem" id="mensagem" rows="5" required placeholder="Digite sua mensagem"
-                                          class="w-full px-4 py-3 text-sm bg-card border border-border-color rounded-lg text-light focus:outline-none focus:border-primary-red resize-none"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-dark bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
-                                Enviar via WhatsApp
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="animate-fade-in" style="animation-delay: 0.3s;">
-                        <h3 class="text-3xl font-bold text-light mb-6">Nossas Redes Sociais</h3>
-                        <div class="flex items-center space-x-4 mb-12">
-                             <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
-                               class="p-4 bg-dark rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
-                                <i data-lucide="facebook" class="w-6 h-6"></i>
-                            </a>
-                             <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
-                               class="p-4 bg-dark rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
-                                <i data-lucide="instagram" class="w-6 h-6"></i>
-                            </a>
-                            <button onclick="openWhatsApp()" class="p-4 bg-dark rounded-lg text-muted hover:text-whatsapp transition-colors" aria-label="WhatsApp">
-                                <i data-lucide="message-circle" class="w-6 h-6"></i>
-                            </button>
-                        </div>
-
-                        <h3 class="text-3xl font-bold text-light mb-6">Nossa Localização</h3>
-                        <div class="w-full h-96 rounded-xl overflow-hidden border border-border-color"> 
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.42545710184!2d-41.4785028!3d-7.076572399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x79c1055a0aac217%3A0xda8f3235eb7e3fd3!2sLeal%20Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1761507854771!5m2!1spt-BR!2sbr"
-                                width="100%"
-                                height="100%"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Localização da Leal Veículos">
-                            </iframe>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                
+                </div> </div> </section>
+        </main>
 
-     <footer class="bg-card border-t border-border-color">
+    <footer class="bg-card border-t border-border-color">
         <div class="h-1 w-full bg-gradient-to-r from-primary-red to-secondary-yellow"></div>
         <div class="container max-w-7xl mx-auto px-4 pt-16 pb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -291,6 +299,10 @@
                             <span class="text-sm text-muted">(89) 99937-4334 (WhatsApp)</span> 
                         </li>
                         <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-primary-red"></i>
+                            <span class="text-sm text-muted">lealveiculos@gmail.com</span> 
+                        </li>
+                        <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-primary-red"></i>
                             <span class="text-sm text-muted">Seg a Sex: 07h – 17h30 | Sáb: 07h – 12h30</span>
                         </li>
@@ -300,11 +312,11 @@
             <div class="border-t border-border-color pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-sm text-muted mb-4 md:mb-0">© <span id="year"></span> Leal Veículos — Todos os direitos reservados.</p>
                 <div class="flex items-center space-x-4">
-                    <a href="https://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
+                    <a href="httpsa://www.facebook.com/leal.veiculos.35/" target="_blank" rel="noopener noreferrer" 
                        class="p-2 bg-dark/50 rounded-lg text-muted hover:text-facebook transition-colors" aria-label="Facebook">
                         <i data-lucide="facebook" class="w-5 h-5"></i>
                     </a>
-                     <a href="https://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
+                     <a href="httpsaS://www.instagram.com/lealveiculospicos/" target="_blank" rel="noopener noreferrer" 
                        class="p-2 bg-dark/50 rounded-lg text-muted hover:text-instagram transition-colors" aria-label="Instagram">
                         <i data-lucide="instagram" class="w-5 h-5"></i>
                     </a>
@@ -318,7 +330,6 @@
     </footer>
 
     <script src="assets/js/script.js" defer></script>
-    
     <script>
       lucide.createIcons();
       if (document.getElementById("year")) {
