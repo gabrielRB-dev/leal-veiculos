@@ -241,9 +241,16 @@
         "id": 14,
         "coverImage": "assets/images/estoque/rav4-2018/capa.jpg",
         "images": [
-            "assets/images/estoque/rav4-2018/1.jpg",
-            "assets/images/estoque/rav4-2018/2.jpg",
-            "assets/images/estoque/rav4-2018/3.jpg"
+            "assets/images/estoque/rav4-2018/frente.jpeg",
+            "assets/images/estoque/rav4-2018/1.jpeg",
+            "assets/images/estoque/rav4-2018/2.jpeg",
+            "assets/images/estoque/rav4-2018/3.jpeg",
+            "assets/images/estoque/rav4-2018/4.jpeg",
+            "assets/images/estoque/rav4-2018/5.jpeg",
+            "assets/images/estoque/rav4-2018/6.jpeg",
+            "assets/images/estoque/rav4-2018/7.jpeg",
+            "assets/images/estoque/rav4-2018/8.jpeg",
+            "assets/images/estoque/rav4-2018/9.jpeg"
         ],
         "brand": "Toyota",
         "model": "RAV4 2.0 4x2",
@@ -272,10 +279,15 @@
         "id": 15,
         "coverImage": "assets/images/estoque/hilux-srx-2021/capa.jpg",
         "images": [
-            "assets/images/estoque/hilux-srx-2021/1.jpg",
-            "assets/images/estoque/hilux-srx-2021/2.jpg",
-            "assets/images/estoque/hilux-srx-2021/3.jpg",
-            "assets/images/estoque/hilux-srx-2021/4.jpg"
+            "assets/images/estoque/hilux-srx-2021/frente.jpeg",
+            "assets/images/estoque/hilux-srx-2021/1.jpeg",
+            "assets/images/estoque/hilux-srx-2021/2.jpeg",
+            "assets/images/estoque/hilux-srx-2021/3.jpeg",
+            "assets/images/estoque/hilux-srx-2021/4.jpeg",
+            "assets/images/estoque/hilux-srx-2021/5.jpeg",
+            "assets/images/estoque/hilux-srx-2021/6.jpeg",
+            "assets/images/estoque/hilux-srx-2021/7.jpeg",
+            "assets/images/estoque/hilux-srx-2021/8.jpeg"
         ],
         "brand": "Toyota",
         "model": "Hilux CD SRX 4x4",
@@ -304,9 +316,16 @@
         "id": 16,
         "coverImage": "assets/images/estoque/strada-volcano-2024/capa.jpg",
         "images": [
-            "assets/images/estoque/strada-volcano-2024/1.jpg",
-            "assets/images/estoque/strada-volcano-2024/2.jpg",
-            "assets/images/estoque/strada-volcano-2024/3.jpg"
+            "assets/images/estoque/strada-volcano-2024/frente.jpeg",
+            "assets/images/estoque/strada-volcano-2024/1.jpeg",
+            "assets/images/estoque/strada-volcano-2024/2.jpeg",
+            "assets/images/estoque/strada-volcano-2024/3.jpeg",
+            "assets/images/estoque/strada-volcano-2024/4.jpeg",
+            "assets/images/estoque/strada-volcano-2024/5.jpeg",
+            "assets/images/estoque/strada-volcano-2024/6.jpeg",
+            "assets/images/estoque/strada-volcano-2024/7.jpeg",
+            "assets/images/estoque/strada-volcano-2024/8.jpeg",
+            "assets/images/estoque/strada-volcano-2024/9.jpeg"
         ],
         "brand": "Fiat",
         "model": "Strada Volcano 1.3 AT",
@@ -378,8 +397,7 @@
             "assets/images/estoque/sw4-srx-2022/4.jpeg",
             "assets/images/estoque/sw4-srx-2022/5.jpeg",
             "assets/images/estoque/sw4-srx-2022/6.jpeg",
-            "assets/images/estoque/sw4-srx-2022/7.jpeg",
-            "assets/images/estoque/sw4-srx-2022/8.jpeg"
+            "assets/images/estoque/sw4-srx-2022/7.jpeg"
         ],
         "brand": "Toyota",
         "model": "Hilux SW4 SRX 4x4",
@@ -513,6 +531,184 @@
             "7 Lugares",
             "Multimídia MyLink 11 pol.",
             "Bancos em couro"
+        ]
+    },
+    {
+        "id": 22,
+        "coverImage": "assets/images/estoque/onix-lt2-2024/capa.jpg",
+        "images": [
+            "assets/images/estoque/onix-lt2-2024/frente.jpeg",
+            "assets/images/estoque/onix-lt2-2024/1.jpeg",
+            "assets/images/estoque/onix-lt2-2024/2.jpeg",
+            "assets/images/estoque/onix-lt2-2024/3.jpeg",
+            "assets/images/estoque/onix-lt2-2024/4.jpeg",
+            "assets/images/estoque/onix-lt2-2024/5.jpeg",
+            "assets/images/estoque/onix-lt2-2024/6.jpeg",
+            "assets/images/estoque/onix-lt2-2024/7.jpeg",
+            "assets/images/estoque/onix-lt2-2024/8.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "Onix 1.0 MT LT2",
+        "year": "2024",
+        "km": "13.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 Aspirado Flex",
+            "power": "82 cv (E)",
+            "transmission": "Manual 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "6 Airbags",
+            "MyLink 8 pol.",
+            "Controle de estabilidade",
+            "Ar-condicionado"
+        ]
+    },
+    {
+        "id": 23,
+        "coverImage": "assets/images/estoque/hrv-exl-2018/capa.jpg",
+        "images": [
+            "assets/images/estoque/hrv-exl-2018/frente.jpeg",
+            "assets/images/estoque/hrv-exl-2018/1.jpeg",
+            "assets/images/estoque/hrv-exl-2018/2.jpeg",
+            "assets/images/estoque/hrv-exl-2018/3.jpeg",
+            "assets/images/estoque/hrv-exl-2018/4.jpeg",
+            "assets/images/estoque/hrv-exl-2018/5.jpeg",
+            "assets/images/estoque/hrv-exl-2018/6.jpeg",
+            "assets/images/estoque/hrv-exl-2018/7.jpeg",
+            "assets/images/estoque/hrv-exl-2018/8.jpeg"
+        ],
+        "brand": "Honda",
+        "model": "HR-V EXL 1.8",
+        "year": "2018",
+        "km": "123.000 km",
+        "colorName": "Vermelho",
+        "colorHex": "#FF0000",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.8 16V i-VTEC",
+            "power": "140 cv (E)",
+            "transmission": "Automática CVT",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Bancos em couro",
+            "Ar-condicionado digital",
+            "Multimídia 7 pol.",
+            "Controle de estabilidade"
+        ]
+    },
+    {
+        "id": 24,
+        "coverImage": "assets/images/estoque/mobi-trekking-2025/capa.jpg",
+        "images": [
+            "assets/images/estoque/mobi-trekking-2025/frente.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/1.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/2.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/3.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/4.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/5.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/6.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/7.jpeg",
+            "assets/images/estoque/mobi-trekking-2025/8.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Mobi Trekking 1.0",
+        "year": "2024/2025",
+        "km": "23.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 Firefly",
+            "power": "74 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Design aventureiro",
+            "Multimídia 7 pol.",
+            "Sensor de estacionamento",
+            "Ar-condicionado"
+        ]
+    },
+    {
+        "id": 25,
+        "coverImage": "assets/images/estoque/strada-endurance-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/strada-endurance-2021/frente.jpeg",
+            "assets/images/estoque/strada-endurance-2021/1.jpeg",
+            "assets/images/estoque/strada-endurance-2021/2.jpeg",
+            "assets/images/estoque/strada-endurance-2021/3.jpeg",
+            "assets/images/estoque/strada-endurance-2021/4.jpeg",
+            "assets/images/estoque/strada-endurance-2021/5.jpeg",
+            "assets/images/estoque/strada-endurance-2021/6.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Strada Endurance CS 1.4",
+        "year": "2020/2021",
+        "km": "94.000 km",
+        "colorName": "Branca",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 Fire 8V",
+            "power": "88 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Cabine Simples Plus",
+            "Controle de estabilidade",
+            "Ar-condicionado",
+            "Direção hidráulica"
+        ]
+    },
+    {
+        "id": 26,
+        "coverImage": "assets/images/estoque/cronos-drive-2024/capa.jpg",
+        "images": [
+            "assets/images/estoque/cronos-drive-2024/frente.jpeg",
+            "assets/images/estoque/cronos-drive-2024/1.jpeg",
+            "assets/images/estoque/cronos-drive-2024/2.jpeg",
+            "assets/images/estoque/cronos-drive-2024/3.jpeg",
+            "assets/images/estoque/cronos-drive-2024/4.jpeg",
+            "assets/images/estoque/cronos-drive-2024/5.jpeg",
+            "assets/images/estoque/cronos-drive-2024/6.jpeg",
+            "assets/images/estoque/cronos-drive-2024/7.jpeg",
+            "assets/images/estoque/cronos-drive-2024/8.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Cronos Drive 1.0",
+        "year": "2023/2024",
+        "km": "50.000 km",
+        "colorName": "Vermelho",
+        "colorHex": "#FF0000",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 Firefly",
+            "power": "75 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Multimídia 7 pol.",
+            "Sensor de estacionamento",
+            "Ar-condicionado",
+            "Amplo porta-malas"
         ]
     }
 ]
