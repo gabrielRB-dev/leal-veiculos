@@ -4,20 +4,22 @@
 ================================================
 */
 
-// (MUDANÇA) O array 'carsData' foi REMOVIDO daqui.
-
-// (NOVO) Cria uma variável global para armazenar os dados dos carros
 let allCarsData = [];
 
-// (NOVO) Função para carregar os dados do JSON
+// ======================= MUDANÇA AQUI: Paginação =======================
+let currentPage = 1;
+const carsPerPage = 9; // Define quantos carros por página
+let currentFilteredCars = []; // Armazena a lista filtrada atual
+// ======================= FIM DA MUDANÇA =======================
+
+
 async function loadCarData() {
     try {
-        // O fetch é relativo ao ARQUIVO HTML (index.html, etc.), não ao script.js
         const response = await fetch('assets/data/carros.json');
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
         }
-        allCarsData = await response.json(); // Armazena na variável global
+        allCarsData = await response.json(); 
         return allCarsData;
     } catch (error) {
         console.error("Não foi possível carregar os dados dos carros:", error);
@@ -25,16 +27,13 @@ async function loadCarData() {
     }
 }
 
-// (NOVO) Função para popular o <select> de Marcas
 function populateBrandFilter() {
     const brandFilter = document.getElementById('filterBrand');
-    if (!brandFilter) return; // Só executa se o elemento existir
+    if (!brandFilter) return; 
 
-    // Encontra todas as marcas únicas
     const brands = [...new Set(allCarsData.map(car => car.brand))];
-    brands.sort(); // Ordena alfabeticamente
+    brands.sort(); 
 
-    // Adiciona cada marca como uma <option>
     brands.forEach(brand => {
         const option = document.createElement('option');
         option.value = brand;
@@ -43,17 +42,14 @@ function populateBrandFilter() {
     });
 }
 
-// (NOVO) Função para popular o <select> do Test-Drive
 function populateTestDriveDropdown() {
     const modeloSelect = document.getElementById('modelo');
-    if (!modeloSelect) return; // Só executa se o elemento existir
+    if (!modeloSelect) return; 
 
-    // Limpa opções antigas (exceto a primeira "Selecione...")
     while (modeloSelect.options.length > 1) {
         modeloSelect.remove(1);
     }
     
-    // Adiciona cada carro
     allCarsData.forEach(car => {
         const option = document.createElement('option');
         option.value = `${car.brand} ${car.model}`;
@@ -61,7 +57,6 @@ function populateTestDriveDropdown() {
         modeloSelect.appendChild(option);
     });
 
-    // Adiciona a opção "Outro" no final
     const optionOutro = document.createElement('option');
     optionOutro.value = "Outro";
     optionOutro.textContent = "Outro (especificar)";
@@ -69,26 +64,20 @@ function populateTestDriveDropdown() {
 }
 
 
-// (MUDANÇA) O DOMContentLoaded agora é 'async' para poder 'await'
 document.addEventListener('DOMContentLoaded', async function() {
     
-    // (MUDANÇA) Espera os dados carregarem ANTES de fazer qualquer outra coisa
     await loadCarData();
     
-    // Inicia as funções básicas que não dependem dos dados
     initMobileMenu();
     initStickyNav();
     initActiveNavLinks();
     initFaqAccordion();
-    initFormHandlers(); // Lógica de WhatsApp
+    initFormHandlers(); 
     
-    // (MUDANÇA) Se não houver carros (erro ao carregar o JSON), mostra um aviso
     if (allCarsData.length === 0) {
         console.log("Nenhum dado de carro carregado. Funções de carro ignoradas.");
         
-        // Trata a página de estoque
         const stockCarsContainer = document.getElementById('stockCars');
-        const carCountEl = document.getElementById('carCount');
         if (stockCarsContainer) {
             stockCarsContainer.innerHTML = `
                 <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 bg-card rounded-xl border border-border-color">
@@ -97,33 +86,30 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <p class="text-muted mt-2">Não foi possível carregar o estoque. Tente recarregar a página.</p>
                 </div>
             `;
-            if(carCountEl) carCountEl.textContent = 'Erro ao carregar';
+            updateCarCount(0); // Usa a nova função
         }
-        // Trata a home
         const featuredCarsContainer = document.getElementById('featuredCars');
         if (featuredCarsContainer) {
             featuredCarsContainer.innerHTML = '<p class="text-muted col-span-3 text-center">Não foi possível carregar os destaques.</p>';
         }
-        // Sai da função
         if (typeof lucide !== 'undefined') lucide.createIcons();
         return;
     }
     
-    // (MUDANÇA) Se os carros carregaram, executa o resto
     
     if (document.getElementById('featuredCars')) {
         renderFeaturedCars(allCarsData.slice(0, 3)); 
     }
     
     if (document.getElementById('stockCars')) {
-        renderStockCars(allCarsData);
-        initFilters(); // (MUDANÇA) Não precisa mais passar 'carsData'
-        populateBrandFilter(); // (NOVO) Chama a função
+        populateBrandFilter(); 
+        initFilters();
+        filterCars(); 
     }
     
     const testDriveForm = document.getElementById('testDriveForm');
     if (testDriveForm) {
-        populateTestDriveDropdown(); // (NOVO) Chama a função
+        populateTestDriveDropdown(); 
         
         const dateInput = testDriveForm.querySelector('input[name="data"]');
         if (dateInput) {
@@ -134,13 +120,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         const modeloFromUrl = urlParams.get('modelo');
         const modeloSelect = testDriveForm.querySelector('select[name="modelo"]');
         
-        // Lógica da ETAPA 3 (pré-preenchimento do formulário) MANTIDA
         if (modeloFromUrl && modeloSelect) {
             const optionExists = Array.from(modeloSelect.options).some(option => option.value === modeloFromUrl);
             if (optionExists) {
                 modeloSelect.value = modeloFromUrl;
             } else {
-                // Se o modelo da URL não está na lista (ex. "Outro"), tenta selecionar "Outro"
                 const outroOption = Array.from(modeloSelect.options).find(option => option.value === 'Outro');
                 if (outroOption) {
                     modeloSelect.value = outroOption.value;
@@ -153,7 +137,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         lucide.createIcons();
     }
 
-    // O resto do seu script.js original (formatadores)
     const cpfInput = document.getElementById('cpf');
     const nascInput = document.getElementById('nascimento');
     const entradaInput = document.getElementById('entrada');
@@ -169,40 +152,30 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 // --- MÓDULO 1: Navegação ---
 
-// ==================================================================
-// ⬇️ MUDANÇA: Lógica do Menu com Texto ⬇️
-// ==================================================================
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn'); 
     const mobileMenu = document.getElementById('mobile-menu'); 
     const menuIconWrapper = document.getElementById('menu-icon');
-    const menuLabel = document.getElementById('menu-label'); // 1. Pega o novo span de texto
+    const menuLabel = document.getElementById('menu-label'); 
 
-    // 2. Adiciona o menuLabel à verificação
     if (!menuBtn || !mobileMenu || !menuIconWrapper || !menuLabel) return;
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         
         if (mobileMenu.classList.contains('hidden')) {
-            // Menu está fechado
             menuIconWrapper.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-            menuLabel.textContent = 'Menu'; // 3. Muda o texto para "Menu"
+            menuLabel.textContent = 'Menu'; 
         } else {
-            // Menu está aberto
             menuIconWrapper.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-            menuLabel.textContent = 'Fechar'; // 4. Muda o texto para "Fechar"
+            menuLabel.textContent = 'Fechar'; 
         }
         
-        // Recria o ícone (menu ou x)
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
     });
 }
-// ==================================================================
-// ⬆️ FIM DA MUDANÇA ⬆️
-// ==================================================================
 
 function initStickyNav() {
     const navbar = document.getElementById('navbar');
@@ -242,7 +215,6 @@ function initActiveNavLinks() {
 }
 
 // --- MÓDULO 2: Accordion (FAQ) ---
-// (Sem mudanças)
 function initFaqAccordion() {
     const faqContainer = document.getElementById('faq-container');
     if (!faqContainer) return;
@@ -272,7 +244,6 @@ function initFaqAccordion() {
 }
 
 // --- MÓDULO 3: Notificações (Toast) ---
-// (Sem mudanças)
 function showToast(message, type = 'success') {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -301,7 +272,6 @@ function showToast(message, type = 'success') {
 
 
 // --- MÓDULO 4: Formulários ---
-// (Lógica do WhatsApp, conforme solicitado)
 function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
@@ -413,7 +383,6 @@ function initFormHandlers() {
 // --- MÓDULO 5: Renderização de Carros ---
 
 function renderCarCard(car) {
-    // A variável 'tagClass' foi removida, pois não é mais necessária.
     
     const priceHtml = car.price === 'Consultar Valor' 
         ? `<button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')" 
@@ -430,7 +399,6 @@ function renderCarCard(car) {
              onclick="openModal(${car.id})">
             
             <div class="relative overflow-hidden">
-                
                 <img src="${car.coverImage}" alt="${car.brand} ${car.model}" 
                      loading="lazy" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
             </div>
@@ -474,14 +442,10 @@ function renderFeaturedCars(featuredCars) {
 
 function renderStockCars(cars) {
     const container = document.getElementById('stockCars');
-    const countEl = document.getElementById('carCount');
     if (!container) return;
 
     if (cars.length > 0) {
         container.innerHTML = cars.map(renderCarCard).join('');
-        if (countEl) {
-            countEl.textContent = `${cars.length} ${cars.length === 1 ? 'veículo encontrado' : 'veículos encontrados'}`;
-        }
     } else {
         container.innerHTML = `
             <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 bg-card rounded-xl border border-border-color">
@@ -490,21 +454,116 @@ function renderStockCars(cars) {
                 <p class="text-muted mt-2">Tente ajustar seus filtros ou remover a busca textual.</p>
             </div>
         `;
-        if (countEl) countEl.textContent = '0 veículos encontrados';
     }
     lucide.createIcons(); 
 }
 
+function updateCarCount(total) {
+    const countEl = document.getElementById('carCount');
+    if (countEl) {
+        if (total > 0) {
+            countEl.textContent = `${total} ${total === 1 ? 'veículo encontrado' : 'veículos encontrados'}`;
+        } else {
+            countEl.textContent = '0 veículos encontrados';
+        }
+    }
+}
 
-// --- MÓDULO 6: Filtros e Busca (Estoque) ---
 
-// (Sem mudanças)
+// --- MÓDULO 6: Filtros, Busca e PAGINAÇÃO ---
+
 function initFilters() {
     document.getElementById('searchBox')?.addEventListener('input', filterCars);
     document.getElementById('filterBrand')?.addEventListener('change', filterCars);
     document.getElementById('sortBy')?.addEventListener('change', filterCars);
 }
 
+// ======================= MUDANÇA AQUI: Correção do Scroll =======================
+// NOVA FUNÇÃO: Manipula a mudança de página
+function changePage(page) {
+    currentPage = page;
+    displayPage(currentFilteredCars); // Usa a lista filtrada armazenada
+    
+    // Alvo é a barra de filtros, que está logo acima do conteúdo
+    const targetElement = document.querySelector('.filters'); 
+    
+    if (targetElement) {
+        // Rola para o topo da barra de filtros
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        // Fallback caso não encontre ( improvável )
+        document.getElementById('stockCars').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+// ======================= FIM DA MUDANÇA =======================
+
+// FUNÇÃO ATUALIZADA: setupPagination agora cria os botões "Anterior" e "Próximo"
+function setupPagination(fullFilteredList) {
+    const container = document.getElementById('pagination-container');
+    if (!container) return;
+    container.innerHTML = ''; // Limpa botões antigos
+    
+    const totalCars = fullFilteredList.length;
+    const totalPages = Math.ceil(totalCars / carsPerPage);
+
+    // Só mostra paginação se tiver mais de 1 página
+    if (totalPages <= 1) return;
+
+    // --- Botão "Anterior" ---
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = `<i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior`;
+    prevButton.onclick = () => changePage(currentPage - 1);
+    prevButton.disabled = (currentPage === 1);
+    prevButton.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-colors bg-card text-muted hover:bg-border-color disabled:opacity-50 disabled:pointer-events-none";
+    container.appendChild(prevButton);
+
+    // --- Botões de Número ---
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.onclick = () => changePage(i);
+        
+        // Estilos base
+        button.className = "w-10 h-10 rounded-lg font-semibold text-sm transition-colors";
+        
+        if (i === currentPage) {
+            // Estilo do botão ativo
+            button.classList.add('bg-primary-red', 'text-dark', 'pointer-events-none');
+        } else {
+            // Estilo do botão inativo
+            button.classList.add('bg-card', 'text-muted', 'hover:bg-border-color');
+        }
+        container.appendChild(button);
+    }
+
+    // --- Botão "Próximo" ---
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = `Próximo <i data-lucide="chevron-right" class="w-4 h-4"></i>`;
+    nextButton.onclick = () => changePage(currentPage + 1);
+    nextButton.disabled = (currentPage === totalPages);
+    nextButton.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-colors bg-card text-muted hover:bg-border-color disabled:opacity-50 disabled:pointer-events-none";
+    container.appendChild(nextButton);
+
+    // Recria os ícones (chevron-left, chevron-right)
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
+
+// FUNÇÃO MODIFICADA: displayPage
+function displayPage(fullFilteredList) {
+    // Armazena a lista filtrada para que os botões de página possam usá-la
+    currentFilteredCars = fullFilteredList;
+
+    const start = (currentPage - 1) * carsPerPage;
+    const end = start + carsPerPage;
+    const paginatedCars = currentFilteredCars.slice(start, end);
+
+    renderStockCars(paginatedCars); // Renderiza apenas os 9 (ou menos) carros da página
+    setupPagination(currentFilteredCars); // Recria os botões (para atualizar o "ativo")
+}
+
+// FUNÇÃO MODIFICADA: filterCars
 function filterCars() {
     const searchBox = document.getElementById('searchBox');
     const brandFilter = document.getElementById('filterBrand');
@@ -514,10 +573,8 @@ function filterCars() {
     const brand = brandFilter ? brandFilter.value : 'todos';
     const sort = sortBy ? sortBy.value : 'default';
 
-    // (MUDANÇA) Usa a variável global 'allCarsData'
     let filtered = [...allCarsData]; 
 
-    // Filtra por texto (se houver)
     if (searchTerm) {
         filtered = filtered.filter(car => 
             car.model.toLowerCase().includes(searchTerm) ||
@@ -525,32 +582,25 @@ function filterCars() {
         );
     }
 
-    // Filtra por marca (se não for "todos")
     if (brand !== 'todos') {
         filtered = filtered.filter(car => car.brand === brand);
     }
     
-    // Filtra por status (se selecionado)
     if (sort === 'status-novo') {
         filtered = filtered.filter(car => car.status === 'Novo');
     } else if (sort === 'status-usado') {
         filtered = filtered.filter(car => car.status === 'Seminovo');
     }
     
-    // Aplica a ORDENAÇÃO (que agora só afeta ano ou o padrão)
     switch (sort) {
-        // As opções 'status-novo' e 'status-usado' não precisam mais ordenar aqui
         case 'year-desc':
             filtered.sort((a, b) => parseInt(b.year) - parseInt(a.year));
             break;
         case 'year-asc':
             filtered.sort((a, b) => parseInt(a.year) - parseInt(b.year));
             break;
-        // Se for 'default' ou 'status-*', não faz nada extra (já foi filtrado se necessário)
     }
 
-    // --- MUDANÇA AQUI: FEEDBACK VISUAL DO FILTRO ---
-    // Adiciona ou remove a borda vermelha do filtro de MARCA
     if (brandFilter) {
         if (brand !== 'todos') {
             brandFilter.classList.add('border-primary-red');
@@ -559,7 +609,6 @@ function filterCars() {
         }
     }
     
-    // Adiciona ou remove a borda vermelha do filtro de ORDENAÇÃO
     if (sortBy) {
         if (sort !== 'default') {
             sortBy.classList.add('border-primary-red');
@@ -567,16 +616,19 @@ function filterCars() {
             sortBy.classList.remove('border-primary-red');
         }
     }
-    // --- FIM DA MUDANÇA ---
 
-    renderStockCars(filtered);
+    // ATUALIZA A CONTAGEM TOTAL
+    updateCarCount(filtered.length);
+    // RESETA PARA A PÁGINA 1
+    currentPage = 1; 
+    // MOSTRA A PÁGINA 1 da nova lista filtrada
+    displayPage(filtered);
 }
 
 
 // --- MÓDULO 7: Modal (Estoque) ---
 
 function openModal(carId) {
-    // (MUDANÇA) Usa a variável global 'allCarsData'
     const car = allCarsData.find(c => c.id === carId);
     if (!car) {
         showToast('Erro: Carro não encontrado.', 'error');
@@ -705,7 +757,6 @@ function openModal(carId) {
     initModalSlider(car.images.length);
 }
 
-// (Sem mudanças)
 function initModalSlider(slideCount) {
     const track = document.getElementById('modal-slider-track');
     const nextBtn = document.getElementById('modal-slider-next');
@@ -747,7 +798,6 @@ function initModalSlider(slideCount) {
     updateSlider();
 }
 
-// (Sem mudanças)
 function closeModal() {
     const modalContainer = document.getElementById('modal-container');
     const modalBackdrop = document.getElementById('modal-backdrop');
@@ -777,11 +827,7 @@ function closeModal() {
 }
 
 
-// --- MÓDULO 8: (Removido) ---
-
-
 // --- MÓDULO 9: Utilitários ---
-// (Sem mudanças - Funções de WhatsApp ainda são usadas nos botões secundários)
 function formatCurrency(value) {
     if (isNaN(value)) {
         return 'R$ -';
@@ -803,11 +849,10 @@ function openWhatsApp() {
 function openWhatsAppForCar(brand, model) {
     const number = '5589999374334';
     const message = encodeURIComponent(`Olá, Leal Veículos! Tenho interesse no ${brand} ${model} e gostaria de mais informações.`);
-    window.open(`httpsa://wa.me/${number}?text=${message}`, '_blank');
+    window.open(`httpsaS://wa.me/${number}?text=${message}`, '_blank');
 }
 
 // --- MÓDULO 10: Formatadores de Input (Máscaras) ---
-// (Sem mudanças)
 function formatCPF(e) {
     let value = e.target.value.replace(/\D/g, ''); 
     value = value.substring(0, 11); 
