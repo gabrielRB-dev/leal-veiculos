@@ -402,7 +402,7 @@
         "brand": "Toyota",
         "model": "Hilux SW4 SRX 4x4",
         "year": "2022",
-        "km": "Não informado",
+        "km": "127.000 km",
         "colorName": "Marrom",
         "colorHex": "#8B4513",
         "price": "Consultar Valor",
@@ -709,6 +709,78 @@
             "Sensor de estacionamento",
             "Ar-condicionado",
             "Amplo porta-malas"
+        ]
+    },
+    {
+        "id": 27,
+        "coverImage": "assets/images/estoque/mobi-like-2022/capa.jpg",
+        "images": [
+            "assets/images/estoque/mobi-like-2022/frente.jpeg",
+            "assets/images/estoque/mobi-like-2022/1.jpeg",
+            "assets/images/estoque/mobi-like-2022/2.jpeg",
+            "assets/images/estoque/mobi-like-2022/3.jpeg",
+            "assets/images/estoque/mobi-like-2022/4.jpeg",
+            "assets/images/estoque/mobi-like-2022/5.jpeg",
+            "assets/images/estoque/mobi-like-2022/6.jpeg",
+            "assets/images/estoque/mobi-like-2022/7.jpeg",
+            "assets/images/estoque/mobi-like-2022/8.jpgg"
+        ],
+        "brand": "Fiat",
+        "model": "Mobi Like 1.0",
+        "year": "2022",
+        "km": "26.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 Fire 8V",
+            "power": "74 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Ar-condicionado",
+            "Direção assistida",
+            "Vidros elétricos dianteiros",
+            "Computador de bordo"
+        ]
+    },
+    {
+        "id": 28,
+        "coverImage": "assets/images/estoque/hilux-std-2014/capa.jpg",
+        "images": [
+            "assets/images/estoque/hilux-std-2014/frente.jpeg",
+            "assets/images/estoque/hilux-std-2014/1.jpeg",
+            "assets/images/estoque/hilux-std-2014/2.jpeg",
+            "assets/images/estoque/hilux-std-2014/3.jpeg",
+            "assets/images/estoque/hilux-std-2014/4.jpeg",
+            "assets/images/estoque/hilux-std-2014/5.jpeg",
+            "assets/images/estoque/hilux-std-2014/6.jpeg",
+            "assets/images/estoque/hilux-std-2014/7.jpeg",
+            "assets/images/estoque/hilux-std-2014/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux CD 4x4 STD 3.0",
+        "year": "2013/2014",
+        "km": "175.000 km",
+        "colorName": "Branca",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "3.0 Turbo Diesel",
+            "power": "171 cv",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4",
+            "Ar-condicionado",
+            "Direção hidráulica",
+            "Freios ABS"
         ]
     }
 ]
