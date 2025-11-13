@@ -782,6 +782,80 @@
             "Direção hidráulica",
             "Freios ABS"
         ]
+    },
+    {
+        "id": 29,
+        "coverImage": "assets/images/estoque/onix-ltz-2018/capa.jpg",
+        "images": [
+            "assets/images/estoque/onix-ltz-2018/frente.jpeg",
+            "assets/images/estoque/onix-ltz-2018/1.jpeg",
+            "assets/images/estoque/onix-ltz-2018/2.jpeg",
+            "assets/images/estoque/onix-ltz-2018/3.jpeg",
+            "assets/images/estoque/onix-ltz-2018/4.jpeg",
+            "assets/images/estoque/onix-ltz-2018/5.jpeg",
+            "assets/images/estoque/onix-ltz-2018/6.jpeg",
+            "assets/images/estoque/onix-ltz-2018/7.jpeg",
+            "assets/images/estoque/onix-ltz-2018/8.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "Onix LTZ 1.4",
+        "year": "2017/2018",
+        "km": "90.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 SPE/4 ECO",
+            "power": "106 cv (E)",
+            "transmission": "Manual 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Multimídia MyLink",
+            "Rodas de liga leve",
+            "Sensor de estacionamento",
+            "Faróis de neblina",
+            "Bancos com revestimento premium"
+        ]
+    },
+    {
+        "id": 30,
+        "coverImage": "assets/images/estoque/corolla-cross-xre-2026/capa.jpg",
+        "images": [
+            "assets/images/estoque/corolla-cross-xre-2026/frente.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/1.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/2.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/3.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/4.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/5.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/6.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/7.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Corolla Cross XRE",
+        "year": "2025/2026",
+        "km": "0 km",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Novo",
+        "specs": {
+            "engine": "2.0 Dynamic Force",
+            "power": "177 cv (E)",
+            "transmission": "Direct Shift CVT",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Toyota Safety Sense",
+            "Painel Digital 12.3\"",
+            "Faróis Full LED",
+            "Carregador por indução",
+            "Ar-condicionado Digital Dual Zone"
+        ]
     }
 
 ]
