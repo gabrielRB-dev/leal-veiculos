@@ -858,4 +858,151 @@
         ]
     }
 
+    ,
+    {
+        "id": 31,
+        "coverImage": "assets/images/estoque/s10-colina-2011/capa.jpg",
+        "images": [
+            "assets/images/estoque/s10-colina-2011/frente.jpeg",
+            "assets/images/estoque/s10-colina-2011/1.jpeg",
+            "assets/images/estoque/s10-colina-2011/2.jpeg",
+            "assets/images/estoque/s10-colina-2011/3.jpeg",
+            "assets/images/estoque/s10-colina-2011/4.jpeg",
+            "assets/images/estoque/s10-colina-2011/5.jpeg",
+            "assets/images/estoque/s10-colina-2011/6.jpeg",
+            "assets/images/estoque/s10-colina-2011/7.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "S10 Colina S 4x4",
+        "year": "2011",
+        "km": "236.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel (MWM)",
+            "power": "140 cv",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4",
+            "Direção hidráulica",
+            "Ar-condicionado",
+            "Freios ABS",
+            "Capota marítima"
+        ]
+    },
+    {
+        "id": 32,
+        "coverImage": "assets/images/estoque/trailblazer-ltz-2017/capa.jpg",
+        "images": [
+            "assets/images/estoque/trailblazer-ltz-2017/frente.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/1.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/2.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/3.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/4.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/5.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/6.jpeg",
+            "assets/images/estoque/trailblazer-ltz-2017/7.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "Trailblazer LTZ 2.8",
+        "year": "2017",
+        "km": "Não informado",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "200 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "7 Lugares",
+            "MyLink com GPS",
+            "Alerta de colisão frontal",
+            "Bancos em couro",
+            "Tração 4x4"
+        ]
+    },
+    {
+        "id": 33,
+        "coverImage": "assets/images/estoque/partner-rapid-2024/capa.jpg",
+        "images": [
+            "assets/images/estoque/partner-rapid-2024/frente.jpeg",
+            "assets/images/estoque/partner-rapid-2024/1.jpeg",
+            "assets/images/estoque/partner-rapid-2024/2.jpeg",
+            "assets/images/estoque/partner-rapid-2024/3.jpeg",
+            "assets/images/estoque/partner-rapid-2024/4.jpeg",
+            "assets/images/estoque/partner-rapid-2024/5.jpeg",
+            "assets/images/estoque/partner-rapid-2024/6.jpeg",
+            "assets/images/estoque/partner-rapid-2024/7.jpeg",
+            "assets/images/estoque/partner-rapid-2024/8.jpeg"
+        ],
+        "brand": "Peugeot",
+        "model": "Partner Rapid Business Pack",
+        "year": "2023/2024",
+        "km": "44.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 Fire Evo",
+            "power": "86 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Controle de estabilidade",
+            "Assistente de partida em rampa",
+            "Ar-condicionado",
+            "Direção hidráulica",
+            "Faróis de neblina"
+        ]
+    },
+    {
+        "id": 34,
+        "coverImage": "assets/images/estoque/tucson-2008/capa.jpg",
+        "images": [
+            "assets/images/estoque/tucson-2008/frente.jpeg",
+            "assets/images/estoque/tucson-2008/1.jpeg",
+            "assets/images/estoque/tucson-2008/2.jpeg",
+            "assets/images/estoque/tucson-2008/3.jpeg",
+            "assets/images/estoque/tucson-2008/4.jpeg",
+            "assets/images/estoque/tucson-2008/5.jpeg",
+            "assets/images/estoque/tucson-2008/6.jpeg",
+            "assets/images/estoque/tucson-2008/7.jpeg",
+            "assets/images/estoque/tucson-2008/8.jpeg"
+        ],
+        "brand": "Hyundai",
+        "model": "Tucson GL 2.0",
+        "year": "2008",
+        "km": "232.000 km",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.0 16V",
+            "power": "142 cv",
+            "transmission": "Automática 4 marchas",
+            "fuel": "Gasolina"
+        },
+        "features": [
+            "Ar-condicionado digital",
+            "Vidros elétricos",
+            "Airbag duplo",
+            "Freios ABS",
+            "Rodas de liga leve"
+        ]
+    }
 ]
