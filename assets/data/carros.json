@@ -1005,4 +1005,118 @@
             "Rodas de liga leve"
         ]
     }
+
+    ,
+    {
+        "id": 35,
+        "coverImage": "assets/images/estoque/corolla-cross-xre-2026-cinza/capa.jpg",
+        "images": [
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/frente.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/1.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/2.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/3.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/4.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/5.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/6.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/7.jpeg",
+            "assets/images/estoque/corolla-cross-xre-2026-cinza/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Corolla Cross XRE",
+        "year": "2026",
+        "km": "0 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Novo",
+        "specs": {
+            "engine": "2.0 Dynamic Force",
+            "power": "177 cv (E)",
+            "transmission": "Direct Shift CVT",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Toyota Safety Sense",
+            "Painel Digital",
+            "Faróis em LED",
+            "Bancos em couro",
+            "Ar-condicionado Dual Zone"
+        ]
+    },
+    {
+        "id": 36,
+        "coverImage": "assets/images/estoque/sw4-srv-2015/capa.jpg",
+        "images": [
+            "assets/images/estoque/sw4-srv-2015/frente.jpeg",
+            "assets/images/estoque/sw4-srv-2015/1.jpeg",
+            "assets/images/estoque/sw4-srv-2015/2.jpeg",
+            "assets/images/estoque/sw4-srv-2015/3.jpeg",
+            "assets/images/estoque/sw4-srv-2015/4.jpeg",
+            "assets/images/estoque/sw4-srv-2015/5.jpeg",
+            "assets/images/estoque/sw4-srv-2015/6.jpeg",
+            "assets/images/estoque/sw4-srv-2015/7.jpeg",
+            "assets/images/estoque/sw4-srv-2015/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "SW4 SRV 3.0 4x4",
+        "year": "2015",
+        "km": "Não informado",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "3.0 Turbo Diesel D-4D",
+            "power": "171 cv",
+            "transmission": "Automática 5 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "7 Lugares",
+            "Tração 4x4",
+            "Bancos em couro",
+            "Controle de estabilidade",
+            "Multimídia com GPS"
+        ]
+    },
+    {
+        "id": 37,
+        "coverImage": "assets/images/estoque/hilux-srv-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/hilux-srv-2021/frente.jpeg",
+            "assets/images/estoque/hilux-srv-2021/1.jpeg",
+            "assets/images/estoque/hilux-srv-2021/2.jpeg",
+            "assets/images/estoque/hilux-srv-2021/3.jpeg",
+            "assets/images/estoque/hilux-srv-2021/4.jpeg",
+            "assets/images/estoque/hilux-srv-2021/5.jpeg",
+            "assets/images/estoque/hilux-srv-2021/6.jpeg",
+            "assets/images/estoque/hilux-srv-2021/7.jpeg",
+            "assets/images/estoque/hilux-srv-2021/8.jpeg",
+            "assets/images/estoque/hilux-srv-2021/9.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux CD SRV 4x4",
+        "year": "2020/2021",
+        "km": "Não informado",
+        "colorName": "Preto",
+        "colorHex": "#000000",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4",
+            "Bancos em couro",
+            "Multimídia com Android Auto/Apple CarPlay",
+            "Sensores de estacionamento",
+            "Rodas de liga leve"
+        ]
+    }
 ]
