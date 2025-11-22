@@ -1119,4 +1119,81 @@
             "Rodas de liga leve"
         ]
     }
+
+    ,
+    {
+        "id": 38,
+        "coverImage": "assets/images/estoque/tiggo8-tgdi-2022/capa.jpg",
+        "images": [
+            "assets/images/estoque/tiggo8-tgdi-2022/frente.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/1.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/2.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/3.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/4.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/5.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/6.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/7.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/8.jpeg",
+            "assets/images/estoque/tiggo8-tgdi-2022/9.jpeg"
+        ],
+        "brand": "Caoa Chery",
+        "model": "Tiggo 8 TXS 1.6 TGDI",
+        "year": "2021/2022",
+        "km": "40.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.6 Turbo GDI",
+            "power": "187 cv",
+            "transmission": "Automatizada 7 marchas (DCT)",
+            "fuel": "Gasolina"
+        },
+        "features": [
+            "7 Lugares",
+            "Teto solar panorâmico",
+            "Câmera 360°",
+            "Painel digital",
+            "Bancos elétricos"
+        ]
+    },
+    {
+        "id": 39,
+        "coverImage": "assets/images/estoque/hilux-srv-2016/capa.jpg",
+        "images": [
+            "assets/images/estoque/hilux-srv-2016/frente.jpeg",
+            "assets/images/estoque/hilux-srv-2016/1.jpeg",
+            "assets/images/estoque/hilux-srv-2016/2.jpeg",
+            "assets/images/estoque/hilux-srv-2016/3.jpeg",
+            "assets/images/estoque/hilux-srv-2016/4.jpeg",
+            "assets/images/estoque/hilux-srv-2016/5.jpeg",
+            "assets/images/estoque/hilux-srv-2016/6.jpeg",
+            "assets/images/estoque/hilux-srv-2016/7.jpeg",
+            "assets/images/estoque/hilux-srv-2016/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux CD SRV 4x4",
+        "year": "2016",
+        "km": "164.000 km",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "177 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4",
+            "Bancos em couro",
+            "Multimídia com GPS e TV",
+            "Controle de estabilidade",
+            "Ar-condicionado digital"
+        ]
+    }
 ]
