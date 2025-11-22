@@ -1196,4 +1196,71 @@
             "Ar-condicionado digital"
         ]
     }
+
+    ,
+    {
+        "id": 40,
+        "coverImage": "assets/images/estoque/pop110-2022/capa.jpg",
+        "images": [
+            "assets/images/estoque/pop110-2022/frente.jpeg",
+            "assets/images/estoque/pop110-2022/1.jpeg",
+            "assets/images/estoque/pop110-2022/2.jpeg",
+            "assets/images/estoque/pop110-2022/3.jpeg",
+            "assets/images/estoque/pop110-2022/4.jpeg"
+        ],
+        "brand": "Honda",
+        "model": "Pop 110i",
+        "year": "2022",
+        "km": "30.000 km",
+        "colorName": "Vermelha",
+        "colorHex": "#FF0000",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "110cc OHC",
+            "power": "7,9 cv",
+            "transmission": "Manual 4 marchas",
+            "fuel": "Gasolina"
+        },
+        "features": [
+            "Injeção Eletrônica PGM-FI",
+            "Freios CBS",
+            "Econômica",
+            "Partida pedal"
+        ]
+    },
+    {
+        "id": 41,
+        "coverImage": "assets/images/estoque/cg160-fan-2023/capa.jpg",
+        "images": [
+            "assets/images/estoque/cg160-fan-2023/frente.jpeg",
+            "assets/images/estoque/cg160-fan-2023/1.jpeg",
+            "assets/images/estoque/cg160-fan-2023/2.jpeg",
+            "assets/images/estoque/cg160-fan-2023/3.jpeg",
+            "assets/images/estoque/cg160-fan-2023/4.jpeg",
+            "assets/images/estoque/cg160-fan-2023/5.jpeg"
+        ],
+        "brand": "Honda",
+        "model": "CG 160 Fan",
+        "year": "2023",
+        "km": "14.000 km",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "160cc OHC FlexOne",
+            "power": "15,1 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Partida elétrica",
+            "Freios CBS",
+            "Painel Digital Blackout",
+            "Rodas de liga leve"
+        ]
+    }
 ]
