@@ -849,7 +849,7 @@ function openWhatsApp() {
 function openWhatsAppForCar(brand, model) {
     const number = '5589999374334';
     const message = encodeURIComponent(`Olá, Leal Veículos! Tenho interesse no ${brand} ${model} e gostaria de mais informações.`);
-    window.open(`httpsaS://wa.me/${number}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${number}?text=${message}`, '_blank');
 }
 
 // --- MÓDULO 10: Formatadores de Input (Máscaras) ---
