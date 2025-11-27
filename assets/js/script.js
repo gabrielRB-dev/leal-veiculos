@@ -843,7 +843,7 @@ function formatCurrency(value) {
 function openWhatsApp() {
     const number = '5589999374334'; 
     const message = encodeURIComponent('Olá! Gostaria de mais informações sobre os veículos.');
-    window.open(`httpsa://wa.me/${number}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${number}?text=${message}`, '_blank');
 }
 
 function openWhatsAppForCar(brand, model) {
