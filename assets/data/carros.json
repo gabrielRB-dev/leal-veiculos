@@ -1263,4 +1263,156 @@
             "Rodas de liga leve"
         ]
     }
+
+    ,
+    {
+        "id": 42,
+        "coverImage": "assets/images/estoque/gol-1.6-msi-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/gol-1.6-msi-2021/frente.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/1.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/2.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/3.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/4.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/5.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/6.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/7.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/8.jpeg",
+            "assets/images/estoque/gol-1.6-msi-2021/9.jpeg"
+        ],
+        "brand": "Volkswagen",
+        "model": "Gol 1.6 MSI",
+        "year": "2020/2021",
+        "km": "90.000 km",
+        "colorName": "Prata",
+        "colorHex": "#C0C0C0",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.6 MSI Flex",
+            "power": "104 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Ar-condicionado",
+            "Direção hidráulica",
+            "Vidros elétricos dianteiros",
+            "Travas elétricas",
+            "Airbag duplo e ABS"
+        ]
+    },
+    {
+        "id": 43,
+        "coverImage": "assets/images/estoque/corolla-xei-2017-cinza/capa.jpg",
+        "images": [
+            "assets/images/estoque/corolla-xei-2017-cinza/frente.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/1.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/2.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/3.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/4.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/5.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/6.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/7.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/8.jpeg",
+            "assets/images/estoque/corolla-xei-2017-cinza/9.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Corolla XEi 2.0",
+        "year": "2016/2017",
+        "km": "139.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.0 Dual VVT-i",
+            "power": "154 cv (E)",
+            "transmission": "Automática CVT (7 marchas)",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Bancos em couro",
+            "Multimídia com GPS e TV",
+            "Ar-condicionado digital",
+            "Rodas de liga leve aro 17",
+            "7 Airbags"
+        ]
+    },
+    {
+        "id": 44,
+        "coverImage": "assets/images/estoque/strada-endurance-cs-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/strada-endurance-cs-2021/frente.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/1.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/2.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/3.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/4.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/5.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/6.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/7.jpeg",
+            "assets/images/estoque/strada-endurance-cs-2021/8.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Strada Endurance CS 1.4",
+        "year": "2020/2021",
+        "km": "95.000 km",
+        "colorName": "Branca",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 Fire Flex",
+            "power": "88 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Controle de estabilidade",
+            "Assistente de partida em rampa",
+            "Ar-condicionado",
+            "Direção hidráulica",
+            "Protetor de caçamba"
+        ]
+    },
+    {
+        "id": 45,
+        "coverImage": "assets/images/estoque/hilux-srv-2022-cinza/capa.jpg",
+        "images": [
+            "assets/images/estoque/hilux-srv-2022-cinza/frente.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/1.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/2.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/3.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/4.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/5.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/6.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/7.jpeg",
+            "assets/images/estoque/hilux-srv-2022-cinza/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Hilux CD SRV 4x4",
+        "year": "2021/2022",
+        "km": "167.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4 com reduzida",
+            "Multimídia com Android Auto/CarPlay",
+            "Bancos em couro",
+            "Sensores de estacionamento",
+            "7 Airbags"
+        ]
+    }
 ]
