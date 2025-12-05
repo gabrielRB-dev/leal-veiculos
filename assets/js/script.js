@@ -6,10 +6,10 @@
 
 let allCarsData = [];
 
-// ======================= MUDANÇA AQUI: Paginação =======================
+// ======================= MUDANÇA: Paginação =======================
 let currentPage = 1;
-const carsPerPage = 9; // Define quantos carros por página
-let currentFilteredCars = []; // Armazena a lista filtrada atual
+const carsPerPage = 9; 
+let currentFilteredCars = []; 
 // ======================= FIM DA MUDANÇA =======================
 
 
@@ -42,25 +42,34 @@ function populateBrandFilter() {
     });
 }
 
-function populateTestDriveDropdown() {
-    const modeloSelect = document.getElementById('modelo');
-    if (!modeloSelect) return; 
+// === FUNÇÃO ATUALIZADA: Preenche dropdowns de Financiamento e Test-Drive ===
+function populateCarDropdowns() {
+    // IDs dos selects que precisam receber a lista de carros
+    const targetIds = ['modelo', 'modeloFinanciamento'];
 
-    while (modeloSelect.options.length > 1) {
-        modeloSelect.remove(1);
-    }
-    
-    allCarsData.forEach(car => {
-        const option = document.createElement('option');
-        option.value = `${car.brand} ${car.model}`;
-        option.textContent = `${car.brand} ${car.model} (${car.year})`;
-        modeloSelect.appendChild(option);
+    targetIds.forEach(id => {
+        const selectElement = document.getElementById(id);
+        if (!selectElement) return; // Se não existir na página atual, ignora
+
+        // Limpa opções antigas (mantém apenas a primeira "Selecione...")
+        while (selectElement.options.length > 1) {
+            selectElement.remove(1);
+        }
+        
+        // Adiciona os carros do JSON
+        allCarsData.forEach(car => {
+            const option = document.createElement('option');
+            option.value = `${car.brand} ${car.model}`;
+            option.textContent = `${car.brand} ${car.model} (${car.year})`;
+            selectElement.appendChild(option);
+        });
+
+        // Adiciona opção "Outro"
+        const optionOutro = document.createElement('option');
+        optionOutro.value = "Outro";
+        optionOutro.textContent = "Outro (especificar)";
+        selectElement.appendChild(optionOutro);
     });
-
-    const optionOutro = document.createElement('option');
-    optionOutro.value = "Outro";
-    optionOutro.textContent = "Outro (especificar)";
-    modeloSelect.appendChild(optionOutro);
 }
 
 
@@ -86,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <p class="text-muted mt-2">Não foi possível carregar o estoque. Tente recarregar a página.</p>
                 </div>
             `;
-            updateCarCount(0); // Usa a nova função
+            updateCarCount(0); 
         }
         const featuredCarsContainer = document.getElementById('featuredCars');
         if (featuredCarsContainer) {
@@ -107,10 +116,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         filterCars(); 
     }
     
+    // Agora chama a função genérica que preenche QUALQUER dropdown de carro
+    populateCarDropdowns();
+
+    // Lógica específica do Test-Drive (Data mínima e URL params)
     const testDriveForm = document.getElementById('testDriveForm');
     if (testDriveForm) {
-        populateTestDriveDropdown(); 
-        
         const dateInput = testDriveForm.querySelector('input[name="data"]');
         if (dateInput) {
             dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
@@ -276,6 +287,7 @@ function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
     
+    // === FORMULÁRIO DE FINANCIAMENTO ATUALIZADO ===
     const simulacaoForm = document.getElementById('simulacaoForm');
     if (simulacaoForm) {
         simulacaoForm.addEventListener('submit', (e) => {
@@ -283,12 +295,13 @@ function initFormHandlers() {
             
             const formData = new FormData(e.target);
             const nome = formData.get('nome')?.trim();
+            const modelo = formData.get('modelo')?.trim(); // Novo campo
             const cpf = formData.get('cpf')?.trim();
             const nascimento = formData.get('nascimento')?.trim();
             const entrada = formData.get('entrada')?.trim();
             const renda = formData.get('renda')?.trim();
 
-            if (!nome || !cpf || !nascimento || !entrada || !renda) {
+            if (!nome || !modelo || !cpf || !nascimento || !entrada || !renda) {
                 showToast('Por favor, preencha todos os campos.', 'error');
                 return;
             }
@@ -297,6 +310,7 @@ function initFormHandlers() {
 `Olá, Leal Veículos!%0A` +
 `Gostaria de solicitar uma análise de financiamento:%0A%0A` +
 `*Nome:* ${nome}%0A` +
+`*Veículo de Interesse:* ${modelo}%0A` +
 `*CPF:* ${cpf}%0A` +
 `*Data de Nasc.:* ${nascimento}%0A` +
 `*Valor de Entrada:* ${entrada}%0A` +
@@ -478,7 +492,6 @@ function initFilters() {
     document.getElementById('sortBy')?.addEventListener('change', filterCars);
 }
 
-// ======================= MUDANÇA AQUI: Correção do Scroll =======================
 // NOVA FUNÇÃO: Manipula a mudança de página
 function changePage(page) {
     currentPage = page;
@@ -495,7 +508,6 @@ function changePage(page) {
         document.getElementById('stockCars').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
-// ======================= FIM DA MUDANÇA =======================
 
 // FUNÇÃO ATUALIZADA: setupPagination agora cria os botões "Anterior" e "Próximo"
 function setupPagination(fullFilteredList) {
