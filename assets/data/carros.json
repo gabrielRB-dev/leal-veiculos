@@ -1272,5 +1272,116 @@
             "Vidros elétricos dianteiros",
             "Travamento elétrico remoto"
         ]
+    },
+    {
+        "id": 49,
+        "coverImage": "assets/images/estoque/hb20-limited-2023/capa.jpg",
+        "images": [
+            "assets/images/estoque/hb20-limited-2023/frente.jpeg",
+            "assets/images/estoque/hb20-limited-2023/1.jpeg",
+            "assets/images/estoque/hb20-limited-2023/2.jpeg",
+            "assets/images/estoque/hb20-limited-2023/3.jpeg",
+            "assets/images/estoque/hb20-limited-2023/4.jpeg",
+            "assets/images/estoque/hb20-limited-2023/5.jpeg",
+            "assets/images/estoque/hb20-limited-2023/6.jpeg",
+            "assets/images/estoque/hb20-limited-2023/7.jpeg",
+            "assets/images/estoque/hb20-limited-2023/8.jpeg"
+        ],
+        "brand": "Hyundai",
+        "model": "HB20 Limited 1.0",
+        "year": "2022/2023",
+        "km": "62.000 km",
+        "colorName": "Azul",
+        "colorHex": "#0000FF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 Kappa Flex",
+            "power": "80 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Multimídia 8\" com espelhamento",
+            "Câmera de ré",
+            "Rodas de liga leve aro 15\"",
+            "Sensor de estacionamento",
+            "Vidros elétricos one-touch"
+        ]
+    },
+    {
+        "id": 50,
+        "coverImage": "assets/images/estoque/tcross-200tsi-2025/capa.jpg",
+        "images": [
+            "assets/images/estoque/tcross-200tsi-2025/frente.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/1.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/2.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/3.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/4.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/5.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/6.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/7.jpeg",
+            "assets/images/estoque/tcross-200tsi-2025/8.jpeg"
+        ],
+        "brand": "Volkswagen",
+        "model": "T-Cross 200 TSI",
+        "year": "2024/2025",
+        "km": "35.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.0 200 TSI Turbo",
+            "power": "128 cv (E)",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "VW Play 10.1\"",
+            "ACC (Piloto Automático Adaptativo)",
+            "Frenagem autônoma de emergência",
+            "Painel Digital 8\"",
+            "6 Airbags"
+        ]
+    },
+    {
+        "id": 51,
+        "coverImage": "assets/images/estoque/cronos-drive-2023/capa.jpg",
+        "images": [
+            "assets/images/estoque/cronos-drive-2023/frente.jpeg",
+            "assets/images/estoque/cronos-drive-2023/1.jpeg",
+            "assets/images/estoque/cronos-drive-2023/2.jpeg",
+            "assets/images/estoque/cronos-drive-2023/3.jpeg",
+            "assets/images/estoque/cronos-drive-2023/4.jpeg",
+            "assets/images/estoque/cronos-drive-2023/5.jpeg",
+            "assets/images/estoque/cronos-drive-2023/6.jpeg",
+            "assets/images/estoque/cronos-drive-2023/7.jpeg",
+            "assets/images/estoque/cronos-drive-2023/8.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Cronos Drive 1.3",
+        "year": "2023",
+        "km": "62.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.3 Firefly",
+            "power": "107 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Multimídia 7\"",
+            "Direção elétrica",
+            "Sensor de estacionamento",
+            "Monitoramento de pressão dos pneus",
+            "Volante multifuncional"
+        ]
     }
 ]
