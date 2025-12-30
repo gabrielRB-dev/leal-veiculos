@@ -1384,4 +1384,297 @@
             "Volante multifuncional"
         ]
     }
+    ,
+    {
+        "id": 52,
+        "coverImage": "assets/images/estoque/sw4-srv-2020/capa.jpg",
+        "images": [
+            "assets/images/estoque/sw4-srv-2020/frente.jpeg",
+            "assets/images/estoque/sw4-srv-2020/1.jpeg",
+            "assets/images/estoque/sw4-srv-2020/2.jpeg",
+            "assets/images/estoque/sw4-srv-2020/3.jpeg",
+            "assets/images/estoque/sw4-srv-2020/4.jpeg",
+            "assets/images/estoque/sw4-srv-2020/5.jpeg",
+            "assets/images/estoque/sw4-srv-2020/6.jpeg",
+            "assets/images/estoque/sw4-srv-2020/7.jpeg",
+            "assets/images/estoque/sw4-srv-2020/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "SW4 SRX 2.8 Diesel",
+        "year": "2019/2020",
+        "km": "101.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "177 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "7 Lugares",
+            "Faróis em LED",
+            "Abertura elétrica do porta-malas",
+            "Bancos em couro marrom",
+            "Chave presencial (Start/Stop)"
+        ]
+    },
+    {
+        "id": 53,
+        "coverImage": "assets/images/estoque/onix-activ-2017/capa.jpg",
+        "images": [
+            "assets/images/estoque/onix-activ-2017/frente.jpeg",
+            "assets/images/estoque/onix-activ-2017/1.jpeg",
+            "assets/images/estoque/onix-activ-2017/2.jpeg",
+            "assets/images/estoque/onix-activ-2017/3.jpeg",
+            "assets/images/estoque/onix-activ-2017/4.jpeg",
+            "assets/images/estoque/onix-activ-2017/5.jpeg",
+            "assets/images/estoque/onix-activ-2017/6.jpeg",
+            "assets/images/estoque/onix-activ-2017/7.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "Onix Activ 1.4",
+        "year": "2016/2017",
+        "km": "57.000 km",
+        "colorName": "Laranja",
+        "colorHex": "#FF4500",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 SPE/4 ECO",
+            "power": "106 cv (E)",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "MyLink com Apple CarPlay",
+            "Câmera de ré",
+            "Sensor de chuva",
+            "Piloto automático",
+            "Visual Off-Road"
+        ]
+    },
+    {
+        "id": 54,
+        "coverImage": "assets/images/estoque/prisma-ltz-2018/capa.jpg",
+        "images": [
+            "assets/images/estoque/prisma-ltz-2018/frente.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/1.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/2.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/3.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/4.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/5.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/6.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/7.jpeg",
+            "assets/images/estoque/prisma-ltz-2018/8.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "Prisma LTZ 1.4",
+        "year": "2018",
+        "km": "99.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 SPE/4 ECO",
+            "power": "106 cv (E)",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Bancos em meio couro",
+            "MyLink",
+            "Sensor de estacionamento",
+            "Rodas de liga leve aro 15",
+            "Faróis de neblina"
+        ]
+    },
+    {
+        "id": 55,
+        "coverImage": "assets/images/estoque/palio-attractive-2016/capa.jpg",
+        "images": [
+            "assets/images/estoque/palio-attractive-2016/frente.jpeg",
+            "assets/images/estoque/palio-attractive-2016/1.jpeg",
+            "assets/images/estoque/palio-attractive-2016/2.jpeg",
+            "assets/images/estoque/palio-attractive-2016/3.jpeg",
+            "assets/images/estoque/palio-attractive-2016/4.jpeg",
+            "assets/images/estoque/palio-attractive-2016/5.jpeg",
+            "assets/images/estoque/palio-attractive-2016/6.jpeg",
+            "assets/images/estoque/palio-attractive-2016/7.jpeg"
+        ],
+        "brand": "Fiat",
+        "model": "Palio Attractive 1.4",
+        "year": "2015/2016",
+        "km": "89.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.4 Fire Evo",
+            "power": "88 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Ar-condicionado",
+            "Direção hidráulica",
+            "Vidros elétricos",
+            "Travas elétricas",
+            "Computador de bordo"
+        ]
+    },
+    {
+        "id": 56,
+        "coverImage": "assets/images/estoque/sw4-srx-2021/capa.jpg",
+        "images": [
+            "assets/images/estoque/sw4-srx-2021/frente.jpeg",
+            "assets/images/estoque/sw4-srx-2021/1.jpeg",
+            "assets/images/estoque/sw4-srx-2021/2.jpeg",
+            "assets/images/estoque/sw4-srx-2021/3.jpeg",
+            "assets/images/estoque/sw4-srx-2021/4.jpeg",
+            "assets/images/estoque/sw4-srx-2021/5.jpeg",
+            "assets/images/estoque/sw4-srx-2021/6.jpeg",
+            "assets/images/estoque/sw4-srx-2021/7.jpeg",
+            "assets/images/estoque/sw4-srx-2021/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "SW4 SRX 2.8 Diesel",
+        "year": "2021",
+        "km": "70.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "204 cv",
+            "transmission": "Automática 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Som JBL Premium",
+            "Toyota Safety Sense (ACC)",
+            "Bancos com ventilação",
+            "Alerta de mudança de faixa",
+            "Faróis Full LED"
+        ]
+    },
+    {
+        "id": 57,
+        "coverImage": "assets/images/estoque/s10-ls-2019/capa.jpg",
+        "images": [
+            "assets/images/estoque/s10-ls-2019/frente.jpeg",
+            "assets/images/estoque/s10-ls-2019/1.jpeg",
+            "assets/images/estoque/s10-ls-2019/2.jpeg",
+            "assets/images/estoque/s10-ls-2019/3.jpeg",
+            "assets/images/estoque/s10-ls-2019/4.jpeg",
+            "assets/images/estoque/s10-ls-2019/5.jpeg",
+            "assets/images/estoque/s10-ls-2019/6.jpeg",
+            "assets/images/estoque/s10-ls-2019/7.jpeg"
+        ],
+        "brand": "Chevrolet",
+        "model": "S10 LS 2.8 4x4",
+        "year": "2018/2019",
+        "km": "156.000 km",
+        "colorName": "Cinza",
+        "colorHex": "#808080",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.8 Turbo Diesel",
+            "power": "200 cv",
+            "transmission": "Manual 6 marchas",
+            "fuel": "Diesel"
+        },
+        "features": [
+            "Tração 4x4 com reduzida",
+            "Assistente de partida em rampa",
+            "Controle de descida",
+            "Ar-condicionado",
+            "Vidros elétricos"
+        ]
+    },
+    {
+        "id": 58,
+        "coverImage": "assets/images/estoque/corolla-xei-2014/capa.jpg",
+        "images": [
+            "assets/images/estoque/corolla-xei-2014/frente.jpeg",
+            "assets/images/estoque/corolla-xei-2014/1.jpeg",
+            "assets/images/estoque/corolla-xei-2014/2.jpeg",
+            "assets/images/estoque/corolla-xei-2014/3.jpeg",
+            "assets/images/estoque/corolla-xei-2014/4.jpeg",
+            "assets/images/estoque/corolla-xei-2014/5.jpeg",
+            "assets/images/estoque/corolla-xei-2014/6.jpeg",
+            "assets/images/estoque/corolla-xei-2014/7.jpeg",
+            "assets/images/estoque/corolla-xei-2014/8.jpeg"
+        ],
+        "brand": "Toyota",
+        "model": "Corolla XEi 2.0",
+        "year": "2013/2014",
+        "km": "159.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "2.0 Dual VVT-i",
+            "power": "153 cv (E)",
+            "transmission": "Automática 4 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Bancos em couro",
+            "Paddle Shifts (Borboletas)",
+            "Ar-condicionado digital",
+            "Piloto automático",
+            "Multimídia com GPS"
+        ]
+    },
+    {
+        "id": 59,
+        "coverImage": "assets/images/estoque/saveiro-cross-2015/capa.jpg",
+        "images": [
+            "assets/images/estoque/saveiro-cross-2015/frente.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/1.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/2.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/3.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/4.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/5.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/6.jpeg",
+            "assets/images/estoque/saveiro-cross-2015/7.jpeg"
+        ],
+        "brand": "Volkswagen",
+        "model": "Saveiro Cross CD",
+        "year": "2014/2015",
+        "km": "137.000 km",
+        "colorName": "Branco",
+        "colorHex": "#FFFFFF",
+        "price": "Consultar Valor",
+        "rawPrice": 0,
+        "status": "Seminovo",
+        "specs": {
+            "engine": "1.6 MSI 16V",
+            "power": "120 cv (E)",
+            "transmission": "Manual 5 marchas",
+            "fuel": "Flex"
+        },
+        "features": [
+            "Controle de estabilidade (ESC)",
+            "ABS Off-Road",
+            "Bancos em couro",
+            "Assistente de partida em rampa",
+            "Sensor de estacionamento"
+        ]
+    }
 ]
