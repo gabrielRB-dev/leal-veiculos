@@ -6,11 +6,11 @@
 
 let allCarsData = [];
 
-// ======================= MUDANÇA: Paginação =======================
+// ======================= PAGINAÇÃO =======================
 let currentPage = 1;
 const carsPerPage = 9; 
 let currentFilteredCars = []; 
-// ======================= FIM DA MUDANÇA =======================
+// =========================================================
 
 
 async function loadCarData() {
@@ -42,21 +42,18 @@ function populateBrandFilter() {
     });
 }
 
-// === FUNÇÃO ATUALIZADA: Preenche dropdowns de Financiamento e Test-Drive ===
+// === Preenche dropdowns de Financiamento e Test-Drive ===
 function populateCarDropdowns() {
-    // IDs dos selects que precisam receber a lista de carros
     const targetIds = ['modelo', 'modeloFinanciamento'];
 
     targetIds.forEach(id => {
         const selectElement = document.getElementById(id);
-        if (!selectElement) return; // Se não existir na página atual, ignora
+        if (!selectElement) return; 
 
-        // Limpa opções antigas (mantém apenas a primeira "Selecione...")
         while (selectElement.options.length > 1) {
             selectElement.remove(1);
         }
         
-        // Adiciona os carros do JSON
         allCarsData.forEach(car => {
             const option = document.createElement('option');
             option.value = `${car.brand} ${car.model}`;
@@ -64,7 +61,6 @@ function populateCarDropdowns() {
             selectElement.appendChild(option);
         });
 
-        // Adiciona opção "Outro"
         const optionOutro = document.createElement('option');
         optionOutro.value = "Outro";
         optionOutro.textContent = "Outro (especificar)";
@@ -105,7 +101,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         return;
     }
     
-    
     if (document.getElementById('featuredCars')) {
         renderFeaturedCars(allCarsData.slice(0, 3)); 
     }
@@ -116,10 +111,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         filterCars(); 
     }
     
-    // Agora chama a função genérica que preenche QUALQUER dropdown de carro
     populateCarDropdowns();
 
-    // Lógica específica do Test-Drive (Data mínima e URL params)
+    // Lógica específica do Test-Drive
     const testDriveForm = document.getElementById('testDriveForm');
     if (testDriveForm) {
         const dateInput = testDriveForm.querySelector('input[name="data"]');
@@ -287,6 +281,29 @@ function initFormHandlers() {
     
     const NOME_LOJA_NUMERO = "5589999374334";
     
+    // FUNÇÃO AUXILIAR: Encontra o carro selecionado para pegar ano e foto
+    function getCarDetailsForMessage(modelName) {
+        if (!modelName || modelName === 'Outro') return { ano: '', linkFoto: '' };
+        
+        // Tenta encontrar o carro na lista carregada
+        const car = allCarsData.find(c => `${c.brand} ${c.model}` === modelName);
+        
+        if (car) {
+            // Cria o link completo da imagem
+            const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+            // Remove barras duplicadas se houver e garante caminho limpo
+            const cleanBaseUrl = baseUrl.replace(/\/$/, ''); 
+            const cleanImgPath = car.coverImage.startsWith('/') ? car.coverImage : '/' + car.coverImage;
+            const fullImageUrl = cleanBaseUrl + cleanImgPath;
+
+            return {
+                ano: car.year,
+                linkFoto: fullImageUrl
+            };
+        }
+        return { ano: '', linkFoto: '' };
+    }
+
     // === FORMULÁRIO DE FINANCIAMENTO ATUALIZADO ===
     const simulacaoForm = document.getElementById('simulacaoForm');
     if (simulacaoForm) {
@@ -295,7 +312,7 @@ function initFormHandlers() {
             
             const formData = new FormData(e.target);
             const nome = formData.get('nome')?.trim();
-            const modelo = formData.get('modelo')?.trim(); // Novo campo
+            const modelo = formData.get('modelo')?.trim();
             const cpf = formData.get('cpf')?.trim();
             const nascimento = formData.get('nascimento')?.trim();
             const entrada = formData.get('entrada')?.trim();
@@ -306,25 +323,30 @@ function initFormHandlers() {
                 return;
             }
 
+            // Pega detalhes extras do carro
+            const details = getCarDetailsForMessage(modelo);
+            const anoStr = details.ano ? ` (${details.ano})` : '';
+            const fotoStr = details.linkFoto ? `%0A*Foto:* ${details.linkFoto}` : '';
+
             const mensagem = 
 `Olá, Leal Veículos!%0A` +
 `Gostaria de solicitar uma análise de financiamento:%0A%0A` +
 `*Nome:* ${nome}%0A` +
-`*Veículo de Interesse:* ${modelo}%0A` +
+`*Veículo:* ${modelo}${anoStr}%0A` +
 `*CPF:* ${cpf}%0A` +
 `*Data de Nasc.:* ${nascimento}%0A` +
 `*Valor de Entrada:* ${entrada}%0A` +
-`*Renda Mensal:* ${renda}`;
+`*Renda Mensal:* ${renda}` +
+`${fotoStr}`;
         
             const url = `https://api.whatsapp.com/send?phone=${NOME_LOJA_NUMERO}&text=${mensagem}`;
-            
             window.open(url, '_blank');
-            
             showToast('Tudo pronto! Confirme o envio no WhatsApp.', 'success');
             e.target.reset();
         });
     }
 
+    // === FORMULÁRIO DE TEST-DRIVE ATUALIZADO ===
     const testDriveForm = document.getElementById('testDriveForm');
     if (testDriveForm) {
         testDriveForm.addEventListener('submit', (e) => {
@@ -347,23 +369,28 @@ function initFormHandlers() {
                 dataFormatada = `${dia}/${mes}/${ano}`;
             } catch (err) {}
 
+            // Pega detalhes extras do carro
+            const details = getCarDetailsForMessage(modelo);
+            const anoStr = details.ano ? ` (${details.ano})` : '';
+            const fotoStr = details.linkFoto ? `%0A*Foto:* ${details.linkFoto}` : '';
+
             const mensagem = 
 `Olá, Leal Veículos!%0A` +
 `Gostaria de agendar um Test-Drive:%0A%0A` +
 `*Nome:* ${nome}%0A` +
-`*Veículo de Interesse:* ${modelo}%0A` +
+`*Veículo:* ${modelo}${anoStr}%0A` +
 `*Data:* ${dataFormatada}%0A` +
-`*Horário:* ${horario}`;
+`*Horário:* ${horario}` +
+`${fotoStr}`;
         
             const url = `https://api.whatsapp.com/send?phone=${NOME_LOJA_NUMERO}&text=${mensagem}`;
-            
             window.open(url, '_blank');
-            
             showToast('Tudo pronto! Confirme o agendamento no WhatsApp.', 'success');
             e.target.reset();
         });
     }
     
+    // Contato continua igual
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -384,9 +411,7 @@ function initFormHandlers() {
 `*Mensagem:*%0A${mensagemInput}`;
 
             const url = `https://api.whatsapp.com/send?phone=${NOME_LOJA_NUMERO}&text=${mensagem}`;
-            
             window.open(url, '_blank');
-
             showToast('Tudo pronto! Confirme o envio da mensagem no WhatsApp.', 'success');
             e.target.reset();
         });
@@ -398,8 +423,9 @@ function initFormHandlers() {
 
 function renderCarCard(car) {
     
-    const priceHtml = car.price === 'Consultar Valor' 
-        ? `<button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')" 
+    // Constrói o botão de WhatsApp passando ano e imagem
+    const whatsAppButton = car.price === 'Consultar Valor' 
+        ? `<button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}', '${car.year}', '${car.coverImage}')" 
                 class="w-full text-left text-2xl font-bold text-secondary-yellow mb-5 p-3 -ml-3 rounded-lg hover:bg-border-color/50 transition-colors flex items-center gap-2">
                 <i data-lucide="message-circle" class="w-5 h-5 flex-shrink-0"></i>
                 <span class="truncate">Consultar Valor</span>
@@ -436,7 +462,7 @@ function renderCarCard(car) {
                     </span>
                 </div>
                 
-                ${priceHtml}
+                ${whatsAppButton}
                 
                 <button onclick="event.stopPropagation(); openModal(${car.id})" class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-primary-red border-2 border-primary-red hover:bg-primary-red hover:text-dark px-6 py-3 rounded-lg transition-all duration-300">
                     Ver Detalhes
@@ -492,36 +518,29 @@ function initFilters() {
     document.getElementById('sortBy')?.addEventListener('change', filterCars);
 }
 
-// NOVA FUNÇÃO: Manipula a mudança de página
 function changePage(page) {
     currentPage = page;
-    displayPage(currentFilteredCars); // Usa a lista filtrada armazenada
+    displayPage(currentFilteredCars); 
     
-    // Alvo é a barra de filtros, que está logo acima do conteúdo
     const targetElement = document.querySelector('.filters'); 
     
     if (targetElement) {
-        // Rola para o topo da barra de filtros
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-        // Fallback caso não encontre ( improvável )
         document.getElementById('stockCars').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
-// FUNÇÃO ATUALIZADA: setupPagination agora cria os botões "Anterior" e "Próximo"
 function setupPagination(fullFilteredList) {
     const container = document.getElementById('pagination-container');
     if (!container) return;
-    container.innerHTML = ''; // Limpa botões antigos
+    container.innerHTML = ''; 
     
     const totalCars = fullFilteredList.length;
     const totalPages = Math.ceil(totalCars / carsPerPage);
 
-    // Só mostra paginação se tiver mais de 1 página
     if (totalPages <= 1) return;
 
-    // --- Botão "Anterior" ---
     const prevButton = document.createElement('button');
     prevButton.innerHTML = `<i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior`;
     prevButton.onclick = () => changePage(currentPage - 1);
@@ -529,26 +548,21 @@ function setupPagination(fullFilteredList) {
     prevButton.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-colors bg-card text-muted hover:bg-border-color disabled:opacity-50 disabled:pointer-events-none";
     container.appendChild(prevButton);
 
-    // --- Botões de Número ---
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
         button.textContent = i;
         button.onclick = () => changePage(i);
         
-        // Estilos base
         button.className = "w-10 h-10 rounded-lg font-semibold text-sm transition-colors";
         
         if (i === currentPage) {
-            // Estilo do botão ativo
             button.classList.add('bg-primary-red', 'text-dark', 'pointer-events-none');
         } else {
-            // Estilo do botão inativo
             button.classList.add('bg-card', 'text-muted', 'hover:bg-border-color');
         }
         container.appendChild(button);
     }
 
-    // --- Botão "Próximo" ---
     const nextButton = document.createElement('button');
     nextButton.innerHTML = `Próximo <i data-lucide="chevron-right" class="w-4 h-4"></i>`;
     nextButton.onclick = () => changePage(currentPage + 1);
@@ -556,26 +570,22 @@ function setupPagination(fullFilteredList) {
     nextButton.className = "flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-colors bg-card text-muted hover:bg-border-color disabled:opacity-50 disabled:pointer-events-none";
     container.appendChild(nextButton);
 
-    // Recria os ícones (chevron-left, chevron-right)
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 }
 
-// FUNÇÃO MODIFICADA: displayPage
 function displayPage(fullFilteredList) {
-    // Armazena a lista filtrada para que os botões de página possam usá-la
     currentFilteredCars = fullFilteredList;
 
     const start = (currentPage - 1) * carsPerPage;
     const end = start + carsPerPage;
     const paginatedCars = currentFilteredCars.slice(start, end);
 
-    renderStockCars(paginatedCars); // Renderiza apenas os 9 (ou menos) carros da página
-    setupPagination(currentFilteredCars); // Recria os botões (para atualizar o "ativo")
+    renderStockCars(paginatedCars); 
+    setupPagination(currentFilteredCars); 
 }
 
-// FUNÇÃO MODIFICADA: filterCars
 function filterCars() {
     const searchBox = document.getElementById('searchBox');
     const brandFilter = document.getElementById('filterBrand');
@@ -629,11 +639,8 @@ function filterCars() {
         }
     }
 
-    // ATUALIZA A CONTAGEM TOTAL
     updateCarCount(filtered.length);
-    // RESETA PARA A PÁGINA 1
     currentPage = 1; 
-    // MOSTRA A PÁGINA 1 da nova lista filtrada
     displayPage(filtered);
 }
 
@@ -744,7 +751,7 @@ function openModal(carId) {
                         </div>
 
                         <div class="mt-auto pt-6 border-t border-border-color space-y-3">
-                            <button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}')"
+                            <button onclick="event.stopPropagation(); openWhatsAppForCar('${car.brand}', '${car.model}', '${car.year}', '${car.coverImage}')"
                                class="w-full flex items-center justify-center gap-2 text-sm font-semibold text-dark bg-primary-red hover:bg-red-700 px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red">
                                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                                 Tirar Dúvidas (WhatsApp)
@@ -858,10 +865,22 @@ function openWhatsApp() {
     window.open(`https://wa.me/${number}?text=${message}`, '_blank');
 }
 
-function openWhatsAppForCar(brand, model) {
+// ATUALIZADA: Agora recebe ano e caminho da imagem
+function openWhatsAppForCar(brand, model, year, imagePath) {
     const number = '5589999374334';
-    const message = encodeURIComponent(`Olá, Leal Veículos! Tenho interesse no ${brand} ${model} e gostaria de mais informações.`);
-    window.open(`https://wa.me/${number}?text=${message}`, '_blank');
+    
+    // Constrói o link completo da imagem
+    let fullImageUrl = '';
+    if (imagePath) {
+        const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+        const cleanBaseUrl = baseUrl.replace(/\/$/, '');
+        const cleanImgPath = imagePath.startsWith('/') ? imagePath : '/' + imagePath;
+        fullImageUrl = cleanBaseUrl + cleanImgPath;
+    }
+
+    const msgText = `Olá, Leal Veículos! Tenho interesse no *${brand} ${model} (${year})* e gostaria de mais informações.%0A%0A*Foto:* ${fullImageUrl}`;
+    
+    window.open(`https://wa.me/${number}?text=${msgText}`, '_blank');
 }
 
 // --- MÓDULO 10: Formatadores de Input (Máscaras) ---
